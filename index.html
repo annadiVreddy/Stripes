@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Estimate Generator</title>
+  <meta name="description" content="House repair estimates">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body class="container-fluid">
+    
+    <div id="div1">
+    <h1 class="jumbotron text-center">House Repair Estimates</h1>
+    <div class="entity-details borderrr">    
+        
+        <div class="form-group entity-each">
+            <label for="" class="col-sm-2 control-label">Firm Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="firmName" placeholder="Firm Name">
+            </div>
+        </div>
+        
+         <div class="form-group entity-each">
+            <label for="" class="col-sm-2 control-label">Contractor</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="contractor" placeholder="Contractor Name">
+            </div>
+          </div>
+        
+         <div class="form-group entity-each">
+            <label for="" class="col-sm-2 control-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="workAddress" placeholder="Enter Address">
+            </div>
+          </div>
+        
+        
+    </div>
+   
+    
+    <div class="borderrr area-cost">
+       <div class="form-group col-lg-12">
+    <label for="" class="col-sm-4 control-label">Total area in sqft</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="totalArea" min="1" step="0.1" placeholder="Enter area">
+    </div>
+  </div>
+        
+           <div class="form-group col-lg-12">
+    <label for="" class="col-sm-4 control-label">Cost per Square foot</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="costPerSqF" min="0.1" step="0.1" placeholder="$$">
+    </div>
+  </div>
+    </div>
+    
+    <!--
+    <section class="borderrr">
+    <table class="">
+        <tr>
+            <th>Category</th>
+            <th>Cost</th>
+            <th>Scope of work</th>
+        </tr>
+        <tr>
+            <td>Exterior
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>Interior
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>Mechanicals
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>Others
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>Total
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+        </table>
+    
+    </section>
+    -->
+    <section class="categories borderrr">
+        
+        <section class="sub-cat">
+            <h3 class="text-center"><strong>Preparation Preliminaries</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Permits and Fees : <input type="number" id="permitsAndFeesPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+                <div class="form-group">
+                    <label for="comment">Specification Information:</label>
+                    <textarea class="form-control" rows="5" id="permitsAndFeesSpecComment">Builder shall complete permit applications and make submissions to municipality for all building and mechanical permits required. Standard permits have been included in this agreement for the permit fees. Unexpected fees will be billed to the client as needed.<br><br>
+
+                                    Owner is responsible for any HOA approvals, if required.</textarea>
+                </div>
+                
+                <div class="form-group">
+                <label for="permitsAndFeesClientInfo">Client Information :</label>
+                <textarea class="form-control" rows="5"  id="permitsAndFeesClientInfo"></textarea>
+                
+                </div> 
+            </section>
+        
+            <section class="sub-cat-each">
+             <h4> Demolition : <input type="number" id="demolitionPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group"> 
+                <label for="demolitionSpecInfo"> Specification Information :</label>
+                <textarea class="form-control" id="demolitionSpecInfo" rows="6" >Demolish existing materials as necessary to facilitate planned design.</textarea></div> 
+                <div class="form-group">
+                <label for="demolitionClientInfo"> Client Information  : </label> <textarea rows="6" id="demolitionClientInfo" class="form-control">Dust and noise are unavoidable in most demolition situations. The work location can often be dangerous, so be sure to have young children and pets out of the work area and an unobstructed path cleared through your home to the outdoors.</textarea></div>  
+            </section>
+
+            <section class="sub-cat-each">
+             <h4> Utility Connections : <input type="number" id="utilityPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+            <div class="from-group">    
+            <label class="comment">Specification Information : </label>
+            <textarea rows="10" id="utilitySpecInfo" class="form-control" >
+ELECTRIC:<br>
+            Connection to public electric service is included. Line from public service to home service panel is included.<br>
+
+            Electric service is assumed to be in road adjacent to property line. Trenching required beyond area of road adjacent to property line is not included. Hookup fees and any required deposit for normal residential use account setup is not included.<br><br>
+
+CABLE, PHONE, INTERNET PROVIDER:<br>
+            It is the homeowner's responsibility to coordinate the underground installation of Comcast & Verizon. It is the homeowners responsibility to arrange the respective hook up after they take possession of the home.</textarea>
+            </div> 
+
+            <div class="form-group">
+            <label class="comment">Client Information  :</label>
+                <textarea rows="3" id="utilityClientInfo" class="form-control">House electrical service to be 200 Ampere (one 200 Ampere panel). Location of panel to be determined in conjunction with exterior meter placement.</textarea>
+            </div>  
+            </section>
+
+           
+    
+        </section>
+        
+        <section class="sub-cat">
+            <h3 class="text-center"><strong>Masonry</strong></h3>
+            <section class="sub-cat-each">
+                <h4> Fireplace Material: <input type="number" id="fireplacePercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Client Specification: </label>
+                    <textarea rows="6" id="fireplaceClientInfo" class="form-control" placeholder="" >Please specify 
+
+- Material (brick, stone, or stucco)
+- Color</textarea>
+                </div>
+            </section>
+            
+            <section class="sub-cat-each">
+                <h4> Brick Veneer: <input type="number" id="brickVinPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Client Specification:</label>
+                    <textarea rows="6" id="brickVinClientInfo" class="form-control"  placeholder="" >Please specify your choice of brick color.</textarea>
+                </div>
+            </section>
+        </section>
+        
+        <!--------------------------Windows and doors------------------- -->
+        
+        <section class="sub-cat">
+            <h3 class="text-center"><strong>Windows and Doors</strong></h3>
+            <section class="sub-cat-each">
+                <h4> Front Door: <input type="number" id="frontDoorPercentage" placeholder="Enter %" min="0" max="100"></h4>
+                 <div class="form-group" >
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="6" id="frontDoorSpecInfo" class="form-control" placeholder="" >Front Door per construction drawings.</textarea>
+                </div>
+                
+                <div class="form-group" >
+                    <label class="comment">Client Specification: </label>
+                    <textarea rows="6" id="frontDoorClientInfo" class="form-control" placeholder="" >Please specify
+
+- Manufacturer
+- Style name and/or number
+- Color</textarea>
+                </div>
+            </section>
+            
+            <section class="sub-cat-each">
+                <h4> Other Exterior Doors : <input type="number" placeholder="Enter %" min="0" max="100" id="OtherDoorsPercentage" ></h4>
+                 <div class="form-group">
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="3" id="OtherDoorsSpecInfo" class="form-control"  placeholder="" >Exterior doors to match window selection.</textarea>
+                </div>
+                
+                 <div class="form-group">
+                     <label class="comment">Client Specification:</label>
+                     <textarea rows="6" id="OtherDoorsClientInfo" class="form-control"  placeholder="" >Please specify 
+
+- Manufacturer
+- Style name and/or number
+- Color</textarea>
+                </div>
+            </section>
+            
+            <section class="sub-cat-each">
+                <h4> Interior Doors : <input type="number" id="interiorDoorsPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+               
+                
+                <div class="form-group" >
+                    <label class="comment">Client Specification: </label>
+                    <textarea rows="6" id="interiorDoorsCInfo" class="form-control"  placeholder="" >Please specify 
+
+- Manufacturer
+- Interior door style
+- Closet door style</textarea>
+                </div>
+            </section>
+            
+            <section class="sub-cat-each">
+                <h4> Garage Doors : <input type="number" id="garagePercentage" placeholder="Enter %" min="0" max="100"></h4>
+                 <div class="form-group">
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="3" id="garageSpecInfo" class="form-control"  placeholder="" >Garage door sizing is per plan. Double door sizing is 16' wide standard.
+
+Front load garage door include square glass, and side load has no glass.</textarea>
+                </div>
+                
+                 <div class="form-group">
+                     <label class="comment">Client Specification:</label>
+                     <textarea rows="6" id="garageClientInfo" class="form-control"  placeholder="" >Please specify <br><br>
+
+- Manufacturer<br>
+- Style name and/or number<br>
+- Color</textarea>
+                </div>
+            </section>
+            
+            <section class="sub-cat-each">
+                <h4>Window and Door Hardware: <input type="number" placeholder="Enter %" min="0" max="100" id="windowAndDoorHardwarePercentage" ></h4>
+            </section>
+            
+            
+        </section>
+        <!---------------------insulation--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Insulation</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Insulation : <input type="number" id="insulationPercentage" placeholder="Enter %" min="0" max="100"></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="5" id="insulationSInfo" class="form-control"  placeholder="" >R-13 Fiberglass Batt insulation in exterior 2x4 above grade walls.<br>
+R-19 Fiberglass Batt insulation in exterior 2x6 above grade walls.<br>
+R-38 Blown insulation between ceilings and attic/roof spaces.<br>
+R-38 or R-38c insulation as needed where there is no access for blown insulation.</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+        <!---------------------Exterior finishes--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Exterior Finishes</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Exterior painting : <input type="number" id="exteriorPaintingPercentage" placeholder="Enter %" min="0" max="100"></h4>
+                 <div class="form-group">
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="3" id="exteriorPaintingSInfo" class="form-control"  placeholder="" >Exterior painting.</textarea> 
+                </div>
+                
+              </section>
+        </section>
+        
+        
+        <!---------------------Drywall--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Driwall</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Drywall: <input type="number" id="drywallPaintingPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information:</label>
+                    <textarea rows="4" class="form-control" id="drywallSInfo"  placeholder="" >All drywall to be 1/2" installed with screws in field, perimeter nails, taped and finished to a level 4 finish.<br><br>
+
+Bath and all wet areas to include moisture resistant drywall. All tile areas to be cement board or Shluter System..</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+        <!---------------------Flooring--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Flooring</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Carpeting: <input type="number" id="carpetPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group" >
+                    <label class="comment">Specification Information:</label>
+                    <textarea rows="5" id="carpetSInfo" class="form-control"  placeholder="" >Carpet type.</textarea> 
+                </div>
+                
+              </section>
+        </section>
+        
+        <!---------------------Interior trim--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Interior Trim</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Interior: <input type="number" id="interiorTrimPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                 <div class="form-group">
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="10" id="interiorSInfo" class="form-control"  placeholder="" >Home trim package includes<br><br>
+
+- 5 1/4" OG speed base boards<br>
+- 3 1/2" Adams casing on doors<br>
+- 3 1/2" Adams Casing skirt and a wooden sill on windows<br>
+- all paint grade material.<br><br>
+
+All interior doors to be solid and painted Masonite doors. <br>
+
+Hollow core doors in all closets.</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+        
+        <!---------------------Ceramic tile--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Ceramic Tile</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Ceramic Tile: <input type="number" id="ceramicTilePercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Client Information: </label>
+                    <textarea rows="10" class="form-control" id="ceramicTileCInfo"  placeholder="" >Indicate your choice of tile for all designated tile areas. <br><br>
+
+Tile to include not only the flooring in bathrooms, but also shower and tub surrounds. Tile allowance will cover any additional accessories, which may include corner shelves in showers, soap dishes in tub areas and niches in both areas, and Allowance covers tile laid in straight or staggered Straight Patterns. Other patterns will need to be priced separately.</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+        
+         <!---------------------Cabinets--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Cabinets</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Cabinets: <input type="number" id="cabinetsPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="6" class="form-control" id="cabinetsSInfo"  placeholder="" >Supply and install your choice of cabinets, per plans, including
+
+- Kitchen Cabinets
+- Bathroom Cabinets
+- Countertop(s)
+- Cabinet Hardware</textarea> 
+                </div>
+                
+              </section>
+              <section class="sub-cat-each">
+             <h4> Counter Tops: <input type="number" id="counterTopsPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Client Information:</label>
+                    <textarea rows="13" class="form-control" id="counterTopsCInfo" placeholder="" >Our Cabinet Supplier will assist you with countertop selection.
+
+Allowance is for granite countertops throughout the home such as<br><br>
+
+- Kitchen<br>
+- Kitchen Island<br>
+- Select Bath Vanities<br>
+- Added decorative touches in niches or knee walls<br><br>
+
+When provided, please review and verify attached information for location, colors, edging, and pricing of the granite selections.<br><br>
+
+Tax, delivery, and installation included.</textarea>
+                  </div>
+                
+              </section>
+              <section class="sub-cat-each">
+             <h4> Cabinet Hardware: <input type="number" id="cabinetHardwarePercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              
+        </section>
+        
+         <!---------------------Appliances--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Appliances</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Appliance Specifications: <input id="appliancesPercentage" type="number" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="10" id="appliancesSInfo" class="form-control"  placeholder="" >An appliance allowance is included for appliances throughout the home in areas such as<br><br>
+
+- Kitchen<br>
+- Butlers pantry if applicable<br>
+- Bar if applicable<br>
+- Kitchenette if applicable<br>
+- Laundry<br><br>
+
+Price includes delivery, taxes, and installation.<br><br>
+
+Our preferred vendor is <br><br>
+
+
+Our sales representative is <br>
+Their contact number is
+</textarea>
+                </div>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Range: <input type="number" id="rangePercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Range Hood: <input type="number" id="rangeHoodPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Disposal: <input type="number" id="disposalPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Dishwasher: <input type="number" id="dishwasherPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Microwave: <input type="number" id="microwavePercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                
+              </section>
+              
+              
+              
+        </section>
+        
+        <!---------------------Finish Plumbing--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Finish Plumbing</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Finish Plumbing: <input type="number" id="finishPlumbingPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="10" id="finishPlumbingSInfo" class="form-control"  placeholder="" >Supply and install plumbing fixtures of your choice.<br><br>
+
+An allowance is included for you to select fixtures.<br><br>
+
+Our preferred vendor is<br><br>
+
+
+Our sales representative is<br><br>
+Their contact number is<br><br>
+</textarea>
+                </div>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Plumbing Fixtures: <input type="number" id="plumbingFixturesPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                 <div class="form-group">
+                     <label class="comment">Client Information:</label>
+                     <textarea rows="10" id="plumbingFixturesCInfo" class="form-control"  placeholder="" >Please specify the Manufacturer, Model, and Finish/Color for<br><br>
+
+- Kitchen Faucet<br>
+- Kitchen Sink <br>
+
+- Powder Room Pedestal<br>
+
+- Vanity Faucets<br>
+- Master Shower<br>
+- Tub/Shower, Shower<br>
+
+- Tub<br>
+- Tub Faucet<br>
+
+- Toilets<br>
+</textarea>
+                  </div>
+                
+              </section>
+              
+        </section>
+        
+         <!---------------------Finish Electrical--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Finish Electrical</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Finish Electrical Specifications: <input type="number" id="finishElectricalPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information:</label>
+                    <textarea rows="10" id="finishElectricalSInfo" class="form-control"  placeholder="" >Home lighting plan is to be developed by builder and approved by owners prior to construction. Types and locations of lights for interior and exterior of home will be determined at that time.<br><br>
+
+When framing is complete, homeowner may walk house with electrician and decide final lighting locations before electrical pre-wire. A lighting fixture list will be developed from this walk through.<br><br>
+
+An allowance is included for homeowner to select lights based upon the fixture list that is compiled.
+
+</textarea>
+                </div>
+                
+              </section>
+              
+              <section class="sub-cat-each">
+             <h4> Electrical Fixtures: <input id="electricalFixturesPercentage" type="number" placeholder="Enter %" min="0" max="100" ></h4>
+                 <div class="form-group">
+                     <label class="comment">Client Information:</label>
+                     <textarea rows="10" id="electricalFixturesCInfo" class="form-control"  placeholder="" >Our preferred vendor is<br><br>
+
+
+Our sales representative is<br>
+Their contact number is <br><br>
+
+
+NOTE: Light fixtures which need to be ordered may take several months to receive and may not be available at time of final electric which can require temporary fixtures to be installed and a return trip by electrician after completion of home.
+</textarea>
+                  </div>
+                
+              </section>
+              
+        </section>
+        
+        <!---------------------Finish HVAC--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Finish HVAC</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Finish HVAC: <input type="number" id="finishHVACPercentage" placeholder="Enter %" min="0" max="100" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information:</label>
+                    <textarea rows="10" id="finishHVACSInfo" class="form-control"  placeholder="" >System locations to be set at best location for system performance.<br><br>
+
+Some different items to consider for higher energy efficiency or to improve air quality include<br><br>
+
+1) Dual Fuel Gas Heat<br>
+2) Higher SEER Ratings<br>
+3) Humidifiers<br>
+4) Dehumidifiers<br>
+5) Geothermal Systems (aka Ground Source Heat Pump)<br>
+6) Solar Energy <br>
+7) Radiant heat<br>
+
+</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+         <!---------------------Interior wall coverings--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Interior Wall Coverings</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Interior Paint: <input type="number" id="interiorPaintPercentage" min="0" max="100" placeholder="Enter %" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea id="interiorPaintSInfo" rows="6" class="form-control" placeholder="" >Select up to three Sherwin Williams Package Colors to use on walls and ceilings.<br>
+Package colors are made in large batches and are more likely to touch-up.<br>
+Other Mixed colors are available for an additional cost.<br>
+White Ceilings are available for an additional cost.<br>
+
+</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+         <!---------------------Landscaping--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Completion</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Building Cleanup: <input type="number" min="0" max="100" id="completionPercentage" placeholder="Enter %" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="6" id="completionSInfo" class="form-control"  placeholder="" >Home to be cleaned by a professional cleaning service. Final detailed cleaning to be performed prior to final orientation with Project Manager.<br><br>
+                        
+Dumpsters to be provided as necessary to store and remove debris.<br><br>
+                        
+Portable Bathroom Facilities shall be maintained on site in good condition for duration of project.<br>
+
+</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+         <!---------------------Landscaping--------------------------------->
+        
+        
+          <section class="sub-cat">
+            <h3 class="text-center"><strong>Landscaping</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Landscaping: <input type="number" min="0" max="100" id="landscapingPercentage" placeholder="Enter %" ></h4>
+                <div class="form-group">
+                    <label class="comment">Specification Information: </label>
+                    <textarea rows="6" id="landscapingSInfo" class="form-control"  placeholder="" >Tree and shrub landscape allowance is included for design and installation of a foundation planting in compliance with neighborhood requirements. Package to be designed with owner input.
+
+</textarea>
+                </div>
+                
+              </section>
+        </section>
+        
+        
+        
+        <!-------------Final Walkthrough Inspection ------------->
+        
+        <section class="sub-cat">
+            <h3 class="text-center"><strong>Walkthrough Inspection</strong></h3>
+            <section class="sub-cat-each">
+             <h4> Final Walkthrough Inspection: <input type="number" id="walkthroughPercentage" min="0" max="100" placeholder="Enter %" ></h4>
+                 <div class="form-group">
+                     <label class="comment">Specification Information:</label>
+                     <textarea rows="6" class="form-control" id="walkthroughSInfo"  placeholder="" >Final walkthrough inspection prior to closing.
+
+</textarea> </div>
+                
+              </section>
+        </section>
+        <button type="button" onclick="submitData()" class="btn btn-success btn-lg submitButtonInHome">Submit</button>
+        
+    </section>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="" id="div2">
+    <div class="jumbtron title-part">
+        <h1 class="text-center">STB Builders</h1>
+        <h3>Specification</h3>
+       <div><label>Contractor:</label> <span id="contractorName"></span></div>
+        <div><label>Address: </label><span id="address"></span></div>
+        <p></p>
+    </div>
+    <div class="eachCategoryMain">
+    <h2><strong>Preparation Preliminaries</strong></h2>
+        <div class="eachCatSubmain">
+       <h3>Permits and Fees</h3>
+            <div class="h3andamount"><span class="text-right" id="permitsanddescvalue"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="permitandfeesdesc"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="permitandfeesclientdesc"></p>
+            </div>
+        </div>
+        <div class="eachCatSubmain">
+        <h3>Demolition</h3>
+            <div class="h3andamount"><span class="text-right" id="demolitionValue"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="demolitionSpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="demolitionClientInfovalue"></p>
+            </div>
+        </div>
+        <div class="eachCatSubmain">
+        <h3>Utility Connection</h3>
+            <div class="h3andamount"><span class="text-right" id="utilityValue"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Masinory</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Fireplace Material</h3>
+            <div class="h3andamount"><span class="text-right" id="fireplaceValue"></span> $</div> 
+            
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="fireplaceClientInfoValue"></p>
+            </div>
+        </div>
+        <div class="eachCatSubmain">
+        <h3>Brick Veneer</h3>
+            <div class="h3andamount"><span class="text-right" id="brickVinValue"></span> $</div> 
+            
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="brickVinClientInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Windows and Doors</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Front Door</h3>
+            <div class="h3andamount"><span class="text-right" id="frontDoorValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="frontDoorSpecInfoFinalToDisplay"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="frontDoorClientInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+        
+        <div class="eachCatSubmain">
+        <h3>Other Exterior Doors</h3>
+            <div class="h3andamount"><span class="text-right" id="OtherDoorsValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="OtherDoorsSpecInfoFinalToDisplay"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="OtherDoorsClientInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+        
+        <div class="eachCatSubmain">
+        <h3>Interior Doors</h3>
+            <div class="h3andamount"><span class="text-right" id="interiorDoorsValueFinalToDisplay"></span> $</div> 
+            
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="interiorDoorsCInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+        
+        <div class="eachCatSubmain">
+        <h3>Garage Doors</h3>
+            <div class="h3andamount"><span class="text-right" id="garageValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="garageSpecInfoFinalToDisplay"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="garageClientInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+        
+        <div class="eachCatSubmain">
+        <h3>Window and Door Hardware</h3>
+            <div class="h3andamount"><span class="text-right" id="windowAndDoorHardwareValueFinalToDisplay"></span> $</div> 
+        </div>
+    </div>
+    
+        
+    <div class="eachCategoryMain">
+    <h2><strong>Insulation</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Insulation</h3>
+            <div class="h3andamount"><span class="text-right" id="insulationValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="insulationSInfoFinalToDisplay"></p></div>
+        </div>
+    </div>
+        
+    <!------------Exterior
+    //exterior painting ------------------->
+        
+    <div class="eachCategoryMain">
+    <h2><strong>Exterior Finishes</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Exterior Painting</h3>
+            <div class="h3andamount"><span class="text-right" id="exteriorPaintingValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="exteriorPaintingSInfoFinalToDisplay"></p></div>
+            
+        </div>
+    </div>
+    
+        
+        <!---------------------drywall------------------->
+    <div class="eachCategoryMain">
+    <h2><strong>Drywall</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Drywall</h3>
+            <div class="h3andamount"><span class="text-right" id="drywallPaintingValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="drywallSInfoFinalToDisplay"></p></div>
+        </div>
+    </div>
+    
+        
+        <!---------------------Flooring------------------->
+        
+    <div class="eachCategoryMain">
+    <h2><strong>Flooring</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Carpeting</h3>
+            <div class="h3andamount"><span class="text-right" id="carpetValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="carpetSInfoFinalToDisplay"></p></div>
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Interior Trim</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Interior Trim</h3>
+            <div class="h3andamount"><span class="text-right" id="interiorTrimValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="interiorSInfoFinalToDisplay"></p></div>
+            
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Ceramic Tile</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Ceramic Tile</h3>
+            <div class="h3andamount"><span class="text-right" id="ceramicTileValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="ceramicTileCInfoFinalToDisplay"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Cabinets</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Cabinet Specifications</h3>
+            <div class="h3andamount"><span class="text-right" id="cabinetsValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="cabinetsSInfoFinalToDisplay"></p></div>
+            
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Counter Tops</h3>
+            <div class="h3andamount"><span class="text-right" id="counterTopsValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="counterTopsCInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Cabinets Hardware</h3>
+            <div class="h3andamount"><span class="text-right" id="cabinetHardwareValueFinalToDisplay"></span> $</div> 
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Appliances</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Appliance Specifications</h3>
+            <div class="h3andamount"><span class="text-right" id="appliancesValueValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="appliancesSInfoFinalToDisplay"></p></div>
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Range</h3>
+            <div class="h3andamount"><span class="text-right" id="rangeValueFinalToDisplay"></span> $</div> 
+          <!--  <div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Range Hood</h3>
+            <div class="h3andamount"><span class="text-right" id="rangeHoodValueFinalToDisplay"></span> $</div> 
+          <!--  <div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Disposal</h3>
+            <div class="h3andamount"><span class="text-right" id="disposalValueFinalToDisplay"></span> $</div> 
+            <!--<div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Dishwasher</h3>
+            <div class="h3andamount"><span class="text-right" id="dishwasherValueFinalToDisplay"></span> $</div> 
+            <!--<div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Microwave</h3>
+            <div class="h3andamount"><span class="text-right" id="microwaveValueFinalToDisplay"></span> $</div> 
+            <!--<div>
+                <label>Specification Information</label>
+                <p class="descText" id="utilitySpecInfovalue"></p></div>
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Plumbing</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Finish Plumbing</h3>
+            <div class="h3andamount"><span class="text-right" id="finishPlumbingValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="finishPlumbingSInfoFinalToDisplay"></p></div>
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Plumbing Fixtures</h3>
+            <div class="h3andamount"><span class="text-right" id="plumbingFixturesValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="plumbingFixturesCInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Electrical</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Finish Electrical Specifications</h3>
+            <div class="h3andamount"><span class="text-right" id="finishElectricalValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="finishElectricalSInfoFinalToDisplay"></p></div>
+            <!--<div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+        
+        <div class="eachCatSubmain">
+        <h3>Electrical Fixtures</h3>
+            <div class="h3andamount"><span class="text-right" id="electricalFixturesValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Client Information:</label>
+                <p class="descText" id="electricalFixturesCInfoFinalToDisplay"></p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Finish HVAC</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Finish HVAC</h3>
+            <div class="h3andamount"><span class="text-right" id="finishHVACValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="finishHVACSInfoFinalToDisplay"></p></div>
+            <!--<div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+    <h2><strong>Interior Wall Coverings</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Interior Paint</h3>
+            <div class="h3andamount"><span class="text-right" id="interiorPaintValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="finteriorPaintSInfoFinalToDisplay"></p></div>
+            <!--<div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+    
+       <div class="eachCategoryMain">
+    <h2><strong>Completion</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Building Cleanup</h3>
+            <div class="h3andamount"><span class="text-right" id="completionValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="completionSInfoFinalToDisplay"></p></div>
+           <!-- <div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+        
+    <div class="eachCategoryMain">
+    <h2><strong>Landscaping</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Landscaping</h3>
+            <div class="h3andamount"><span class="text-right" id="landscapingValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="landscapingSInfoFinalToDisplay"></p></div>
+            <!--<div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+    
+    <div class="eachCategoryMain">
+        <h2><strong>Walkthrough Inspection</strong></h2>
+        <div class="eachCatSubmain">
+        <h3>Final Walkthrough Inspection</h3>
+            <div class="h3andamount"><span class="text-right" id="walkthroughValueFinalToDisplay"></span> $</div> 
+            <div>
+                <label>Specification Information</label>
+                <p class="descText" id="walkthroughSInfoFinalToDisplay"></p></div>
+            <!--<div>
+                <label>Client Information:</label>
+                <p class="descText" id="utilityClientInfovalue"></p>
+            </div>-->
+        </div>
+    </div>
+        
+    <div class="eachCategoryMain totalbox">
+        <h2><strong>Total</strong></h2>
+        <div class="">
+            <div class="h3andamount"><span class="text-right" id="total"></span> $</div> 
+           
+        </div>
+    </div>
+    <div class="bottomSignature1">
+        <label>Client Signature</label>
+        
+            <span class="sigDate">Date</span>
+           
+    </div>
+    <div class="bottomSignature">
+        <label>Client Signature</label>
+        
+            <span class="sigDate">Date</span>
+           
+    </div>
+    <div class="bottomSignature">
+        <label>Contractor Signature</label>
+        
+            <span class="sigDate">Date</span>
+           
+    </div>
+        
+        
+      <button type="button" id="printbtn" onClick="window.print()" class="btn btn-success btn-lg printButton">Print</button>  
+    </div>
+    
+  <script src="script.js"></script>
+</body>
+</html>
