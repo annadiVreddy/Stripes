@@ -14,7 +14,7 @@ function submitData() {
     var calculateAmountFromPercentage = function (totCost, percent) {
         return (percent / 100) * totCost;
     }
-
+ 
     //Preparation Priliminaries
     if (document.getElementById('permits-and-fees-checkbox').checked || document.getElementById('architectur-and-engineering-checkbox').checked || document.getElementById('site-work-checkbox-id').checked || document.getElementById('demolition-checkbox-id').checked || document.getElementById('utility-connection-checkbox-id').checked) {
         $("#preparation-priliminaries-category").show();
