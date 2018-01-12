@@ -1873,6 +1873,6 @@ function submitData() {
 }
 
 function docuPrint() {
-    document.title = document.getElementById('userEnteredWorkAddressId').value;
+    document.title = document.getElementById('outputAddressID').value;
     window.print();
 }
