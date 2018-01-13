@@ -22,7 +22,7 @@ function submitData() {
         $("#preparation-priliminaries-category").hide();
     }
     //Permits and fees
-    var permitsAndFeesPercentage = document.getElementById('permitsAndFeesPercentage').value;
+    var permitsAndFeesPercentage = Number(document.getElementById('permitsAndFeesPercentage').value);
     var permitsAndFeesSpecComment = document.getElementById('permitsAndFeesSpecComment').value;
     var permitsAndFeesClientInfo = document.getElementById('permitsAndFeesClientInfo').value;
 
@@ -31,7 +31,7 @@ function submitData() {
 
     document.getElementById('permitandfeesdesc').innerHTML = permitsAndFeesSpecComment;
     document.getElementById('permitandfeesclientdesc').innerHTML = permitsAndFeesClientInfo;
-    document.getElementById('permitsanddescvalue').innerHTML = permitsAndFeesValue;
+    document.getElementById('permitsanddescvalue').innerHTML = (permitsAndFeesValue).toFixed(2);
 
     if (document.getElementById('permits-and-fees-checkbox').checked) {
         $("#permits-fees-part-with-user-values-to-display").show();
@@ -39,11 +39,11 @@ function submitData() {
         $("#permits-fees-part-with-user-values-to-display").hide();
     }
 
-    //console.log("permitsAndFeesValue " + permitsAndFeesValue)
+    console.log("permitsAndFeesValue " + permitsAndFeesValue)
 
 
     //Architectural and Engineering
-    var architecturalEngineeringUserEnteredPercentage = document.getElementById('architectural-Engineering-user-input-percentage').value;
+    var architecturalEngineeringUserEnteredPercentage = Number(document.getElementById('architectural-Engineering-user-input-percentage').value);
     var architecturalEngineeringUserEnteredSpecInfo = document.getElementById('architectur-and-engineering-user-input-spec-info').value;
     var architecturalEngineeringUserEnteredClientInfo = document.getElementById('architectur-and-engineering-user-input-client-info').value;
 
@@ -52,7 +52,7 @@ function submitData() {
 
     document.getElementById('architectur-and-engineering-spec-info-value').innerHTML = architecturalEngineeringUserEnteredSpecInfo;
     document.getElementById('architectur-and-engineering-client-info-value').innerHTML = architecturalEngineeringUserEnteredClientInfo;
-    document.getElementById('architectur-and-engineering-value').innerHTML = architecturalEngineeringValue;
+    document.getElementById('architectur-and-engineering-value').innerHTML = architecturalEngineeringValue.toFixed(2);
 
     if (document.getElementById('architectur-and-engineering-checkbox').checked) {
         $("#architectural-Engineering-part-with-user-values-to-display").show();
@@ -62,7 +62,7 @@ function submitData() {
 
 
     //Site work
-    var siteworkUserEnteredPercentage = document.getElementById('site-work-user-input-percentage').value;
+    var siteworkUserEnteredPercentage = Number(document.getElementById('site-work-user-input-percentage').value);
     var siteworkUserEnteredSpecInfo = document.getElementById('site-work-user-input-spec-info').value;
     var siteworkUserEnteredClientInfo = document.getElementById('site-work-user-input-client-info').value;
 
@@ -71,7 +71,7 @@ function submitData() {
 
     document.getElementById('site-work-spec-info-value').innerHTML = siteworkUserEnteredSpecInfo;
     document.getElementById('site-work-client-info-value').innerHTML = siteworkUserEnteredClientInfo;
-    document.getElementById('site-work-value').innerHTML = siteWorkValue;
+    document.getElementById('site-work-value').innerHTML = siteWorkValue.toFixed(2);
 
     if (document.getElementById('site-work-checkbox-id').checked) {
         $("#site-work-part-with-user-values-to-display").show();
@@ -81,14 +81,14 @@ function submitData() {
 
 
     //Demolition
-    var demolitionUserEnteredPercentage = document.getElementById('demolition-user-entered-Percentage').value;
+    var demolitionUserEnteredPercentage = Number(document.getElementById('demolition-user-entered-Percentage').value);
     var demolitionUserEnteredSpecInfo = document.getElementById('demolition-user-entered-SpecInfo').value;
     var demolitionUserEnteredClientInfo = document.getElementById('demolition-user-entered-ClientInfo').value;
 
     var demolitionValue = calculateAmountFromPercentage(totalCost, demolitionUserEnteredPercentage);
 
 
-    document.getElementById('demolitionValue').innerHTML = demolitionValue;
+    document.getElementById('demolitionValue').innerHTML = demolitionValue.toFixed(2);
     document.getElementById('demolitionSpecInfovalue').innerHTML = demolitionUserEnteredSpecInfo;
     document.getElementById('demolitionClientInfovalue').innerHTML = demolitionUserEnteredClientInfo;
 
@@ -104,14 +104,14 @@ function submitData() {
 
 
     //utility connections
-    var utilityConnectionUserEnteredPercentage = document.getElementById('utility-connection-user-entered-Percentage').value;
+    var utilityConnectionUserEnteredPercentage = Number(document.getElementById('utility-connection-user-entered-Percentage').value);
     var utilityConnectionUserEnteredSpecInfo = document.getElementById('utility-connection-user-entered-SpecInfo').value;
     var utilityConnectionUserEnteredClientInfo = document.getElementById('utility-connection-user-entered-ClientInfo').value;
 
     var utilityValue = calculateAmountFromPercentage(totalCost, utilityConnectionUserEnteredPercentage);
 
 
-    document.getElementById('utilityValue').innerHTML = utilityValue;
+    document.getElementById('utilityValue').innerHTML = utilityValue.toFixed(2);
     document.getElementById('utilitySpecInfovalue').innerHTML = utilityConnectionUserEnteredSpecInfo;
     document.getElementById('utilityClientInfovalue').innerHTML = utilityConnectionUserEnteredClientInfo;
 
@@ -131,14 +131,14 @@ function submitData() {
         $("#excavation-and-foundation-category").hide();
     }
     ///////////////////Excavation///////////////////////////////
-    var excavationUserEnteredPercentage = document.getElementById('excavation-user-entered-Percentage').value;
+    var excavationUserEnteredPercentage = Number(document.getElementById('excavation-user-entered-Percentage').value);
     var excavationUserEnteredSpecInfo = document.getElementById('excavation-user-entered-SpecInfo').value;
     var excavationUserEnteredClientInfo = document.getElementById('excavation-user-entered-ClientInfo').value;
 
     var excavationValue = calculateAmountFromPercentage(totalCost, excavationUserEnteredPercentage);
 
 
-    document.getElementById('excavation-Value').innerHTML = excavationValue;
+    document.getElementById('excavation-Value').innerHTML = excavationValue.toFixed(2);
     document.getElementById('excavation-spec-info-value').innerHTML = excavationUserEnteredSpecInfo;
     document.getElementById('excavation-client-info-value').innerHTML = excavationUserEnteredClientInfo;
 
@@ -149,14 +149,14 @@ function submitData() {
     }
 
     ///////////////////Footing and Foundation///////////////////////////////
-    var footingAndFoundationUserEnteredPercentage = document.getElementById('footing-and-foundation-user-entered-Percentage').value;
+    var footingAndFoundationUserEnteredPercentage = Number(document.getElementById('footing-and-foundation-user-entered-Percentage').value);
     var footingAndFoundationUserEnteredSpecInfo = document.getElementById('footing-and-foundation-user-entered-SpecInfo').value;
     var footingAndFoundationUserEnteredClientInfo = document.getElementById('footing-and-foundation-user-entered-ClientInfo').value;
 
     var footingAndFoundationValue = calculateAmountFromPercentage(totalCost, footingAndFoundationUserEnteredPercentage);
 
 
-    document.getElementById('footing-and-foundation-Value').innerHTML = footingAndFoundationValue;
+    document.getElementById('footing-and-foundation-Value').innerHTML = footingAndFoundationValue.toFixed(2);
     document.getElementById('footing-and-foundation-spec-info-value').innerHTML = footingAndFoundationUserEnteredSpecInfo;
     document.getElementById('footing-and-foundation-client-info-value').innerHTML = footingAndFoundationUserEnteredClientInfo;
 
@@ -167,14 +167,14 @@ function submitData() {
     };
 
     ///////////////////Water Proofing///////////////////////////////
-    var waterProofingUserEnteredPercentage = document.getElementById('water-proofing-user-entered-Percentage').value;
+    var waterProofingUserEnteredPercentage = Number(document.getElementById('water-proofing-user-entered-Percentage').value);
     var waterProofingUserEnteredSpecInfo = document.getElementById('water-proofing-user-entered-SpecInfo').value;
     var waterProofingUserEnteredClientInfo = document.getElementById('water-proofing-user-entered-ClientInfo').value;
 
     var waterProofingValue = calculateAmountFromPercentage(totalCost, waterProofingUserEnteredPercentage);
 
 
-    document.getElementById('water-proofing-Value').innerHTML = waterProofingValue;
+    document.getElementById('water-proofing-Value').innerHTML = waterProofingValue.toFixed(2);
     document.getElementById('water-proofing-spec-info-value').innerHTML = waterProofingUserEnteredSpecInfo;
     document.getElementById('water-proofing-client-info-value').innerHTML = waterProofingUserEnteredClientInfo;
 
@@ -185,14 +185,14 @@ function submitData() {
     };
 
     ///////////////////Termite Protection///////////////////////////////
-    var termiteProtectionUserEnteredPercentage = document.getElementById('termite-protection-user-entered-Percentage').value;
+    var termiteProtectionUserEnteredPercentage = Number(document.getElementById('termite-protection-user-entered-Percentage').value);
     var termiteProtectionUserEnteredSpecInfo = document.getElementById('termite-protection-user-entered-SpecInfo').value;
     var termiteProtectionUserEnteredClientInfo = document.getElementById('termite-protection-user-entered-ClientInfo').value;
 
     var termiteProtectionValue = calculateAmountFromPercentage(totalCost, termiteProtectionUserEnteredPercentage);
 
 
-    document.getElementById('termite-protection-Value').innerHTML = termiteProtectionValue;
+    document.getElementById('termite-protection-Value').innerHTML = termiteProtectionValue.toFixed(2);
     document.getElementById('termite-protection-spec-info-value').innerHTML = termiteProtectionUserEnteredSpecInfo;
     document.getElementById('termite-protection-client-info-value').innerHTML = termiteProtectionUserEnteredClientInfo;
 
@@ -214,14 +214,14 @@ function submitData() {
     }
 
     ////////////////////steel///////////////////////////////////////
-    var steelUserEnteredPercentage = document.getElementById('steel-user-entered-Percentage').value;
+    var steelUserEnteredPercentage = Number(document.getElementById('steel-user-entered-Percentage').value);
     var steelUserEnteredSpecInfo = document.getElementById('steel-user-entered-SpecInfo').value;
     var steelUserEnteredClientInfo = document.getElementById('steel-user-entered-ClientInfo').value;
 
     var steelValue = calculateAmountFromPercentage(totalCost, steelUserEnteredPercentage);
 
 
-    document.getElementById('steel-Value').innerHTML = steelValue;
+    document.getElementById('steel-Value').innerHTML = steelValue.toFixed(2);
     document.getElementById('steel-spec-info-value').innerHTML = steelUserEnteredSpecInfo;
     document.getElementById('steel-client-info-value').innerHTML = steelUserEnteredClientInfo;
 
@@ -233,14 +233,14 @@ function submitData() {
 
 
     ////////////////////Framing///////////////////////////////////////
-    var framingUserEnteredPercentage = document.getElementById('framing-user-entered-Percentage').value;
+    var framingUserEnteredPercentage = Number(document.getElementById('framing-user-entered-Percentage').value);
     var framingUserEnteredSpecInfo = document.getElementById('framing-user-entered-SpecInfo').value;
     var framingUserEnteredClientInfo = document.getElementById('framing-user-entered-ClientInfo').value;
 
     var framingValue = calculateAmountFromPercentage(totalCost, framingUserEnteredPercentage);
 
 
-    document.getElementById('framing-Value').innerHTML = framingValue;
+    document.getElementById('framing-Value').innerHTML = framingValue.toFixed(2);
     document.getElementById('framing-spec-info-value').innerHTML = framingUserEnteredSpecInfo;
     document.getElementById('framing-client-info-value').innerHTML = framingUserEnteredClientInfo;
 
@@ -251,14 +251,14 @@ function submitData() {
     };
 
     ////////////////////Concrete///////////////////////////////////////
-    var concreteUserEnteredPercentage = document.getElementById('concrete-user-entered-Percentage').value;
+    var concreteUserEnteredPercentage = Number(document.getElementById('concrete-user-entered-Percentage').value);
     var concreteUserEnteredSpecInfo = document.getElementById('concrete-user-entered-SpecInfo').value;
     var concreteUserEnteredClientInfo = document.getElementById('concrete-user-entered-ClientInfo').value;
 
     var concreteValue = calculateAmountFromPercentage(totalCost, concreteUserEnteredPercentage);
 
 
-    document.getElementById('concrete-Value').innerHTML = concreteValue;
+    document.getElementById('concrete-Value').innerHTML = concreteValue.toFixed(2);
     document.getElementById('concrete-spec-info-value').innerHTML = concreteUserEnteredSpecInfo;
     document.getElementById('concrete-client-info-value').innerHTML = concreteUserEnteredClientInfo;
 
@@ -269,14 +269,14 @@ function submitData() {
     };
 
     ////////////////////Sheet Metal/////////////////////////////////////
-    var sheetMetalUserEnteredPercentage = document.getElementById('sheet-metal-user-entered-Percentage').value;
+    var sheetMetalUserEnteredPercentage = Number(document.getElementById('sheet-metal-user-entered-Percentage').value);
     var sheetMetalUserEnteredSpecInfo = document.getElementById('sheet-metal-user-entered-SpecInfo').value;
     var sheetMetalUserEnteredClientInfo = document.getElementById('sheet-metal-user-entered-ClientInfo').value;
 
     var sheetMetalValue = calculateAmountFromPercentage(totalCost, sheetMetalUserEnteredPercentage);
 
 
-    document.getElementById('sheet-metal-Value').innerHTML = sheetMetalValue;
+    document.getElementById('sheet-metal-Value').innerHTML = sheetMetalValue.toFixed(2);
     document.getElementById('sheet-metal-spec-info-value').innerHTML = sheetMetalUserEnteredSpecInfo;
     document.getElementById('sheet-metal-client-info-value').innerHTML = sheetMetalUserEnteredClientInfo;
 
@@ -287,14 +287,14 @@ function submitData() {
     };
 
     ////////////////////Rough Plumbing//////////////////////////////////
-    var roughPlumbingUserEnteredPercentage = document.getElementById('rough-plumbing-user-entered-Percentage').value;
+    var roughPlumbingUserEnteredPercentage = Number(document.getElementById('rough-plumbing-user-entered-Percentage').value);
     var roughPlumbingUserEnteredSpecInfo = document.getElementById('rough-plumbing-user-entered-SpecInfo').value;
     var roughPlumbingUserEnteredClientInfo = document.getElementById('rough-plumbing-user-entered-ClientInfo').value;
 
     var roughPlumbingValue = calculateAmountFromPercentage(totalCost, roughPlumbingUserEnteredPercentage);
 
 
-    document.getElementById('rough-plumbing-Value').innerHTML = roughPlumbingValue;
+    document.getElementById('rough-plumbing-Value').innerHTML = roughPlumbingValue.toFixed(2);
     document.getElementById('rough-plumbing-spec-info-value').innerHTML = roughPlumbingUserEnteredSpecInfo;
     document.getElementById('rough-plumbing-client-info-value').innerHTML = roughPlumbingUserEnteredClientInfo;
 
@@ -305,14 +305,14 @@ function submitData() {
     };
 
     ////////////////////Rough Electrical////////////////////////////////
-    var roughElectricalUserEnteredPercentage = document.getElementById('rough-electrical-user-entered-Percentage').value;
+    var roughElectricalUserEnteredPercentage = Number(document.getElementById('rough-electrical-user-entered-Percentage').value);
     var roughElectricalUserEnteredSpecInfo = document.getElementById('rough-electrical-user-entered-SpecInfo').value;
     var roughElectricalUserEnteredClientInfo = document.getElementById('rough-electrical-user-entered-ClientInfo').value;
 
     var roughElectricalValue = calculateAmountFromPercentage(totalCost, roughElectricalUserEnteredPercentage);
 
 
-    document.getElementById('rough-electrical-Value').innerHTML = roughElectricalValue;
+    document.getElementById('rough-electrical-Value').innerHTML = roughElectricalValue.toFixed(2);
     document.getElementById('rough-electrical-spec-info-value').innerHTML = roughElectricalUserEnteredSpecInfo;
     document.getElementById('rough-electrical-client-info-value').innerHTML = roughElectricalUserEnteredClientInfo;
 
@@ -324,14 +324,14 @@ function submitData() {
 
 
     ////////////////////Rough HVAC////////////////////////////////
-    var roughHvacUserEnteredPercentage = document.getElementById('rough-hvac-user-entered-Percentage').value;
+    var roughHvacUserEnteredPercentage = Number(document.getElementById('rough-hvac-user-entered-Percentage').value);
     var roughHvacUserEnteredSpecInfo = document.getElementById('rough-hvac-user-entered-SpecInfo').value;
     var roughHvacUserEnteredClientInfo = document.getElementById('rough-hvac-user-entered-ClientInfo').value;
 
     var roughHvacValue = calculateAmountFromPercentage(totalCost, roughHvacUserEnteredPercentage);
 
 
-    document.getElementById('rough-hvac-Value').innerHTML = roughHvacValue;
+    document.getElementById('rough-hvac-Value').innerHTML = roughHvacValue.toFixed(2);
     document.getElementById('rough-hvac-spec-info-value').innerHTML = roughHvacUserEnteredSpecInfo;
     document.getElementById('rough-hvac-client-info-value').innerHTML = roughHvacUserEnteredClientInfo;
 
@@ -355,14 +355,14 @@ function submitData() {
     };
 
     ///////////////////////Roofing Specifications////////////////
-    var roofingSpecificationsUserEnteredPercentage = document.getElementById('roofing-specifications-user-entered-Percentage').value;
+    var roofingSpecificationsUserEnteredPercentage = Number(document.getElementById('roofing-specifications-user-entered-Percentage').value);
     var roofingSpecificationsUserEnteredSpecInfo = document.getElementById('roofing-specifications-user-entered-SpecInfo').value;
     var roofingSpecificationsUserEnteredClientInfo = document.getElementById('roofing-specifications-user-entered-ClientInfo').value;
 
     var roofingSpecificationsValue = calculateAmountFromPercentage(totalCost, roofingSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('roofing-specifications-Value').innerHTML = roofingSpecificationsValue;
+    document.getElementById('roofing-specifications-Value').innerHTML = roofingSpecificationsValue.toFixed(2);
     document.getElementById('roofing-specifications-spec-info-value').innerHTML = roofingSpecificationsUserEnteredSpecInfo;
     document.getElementById('roofing-specifications-client-info-value').innerHTML = roofingSpecificationsUserEnteredClientInfo;
 
@@ -374,14 +374,14 @@ function submitData() {
 
 
     ///////////////////////Roofing Material////////////////
-    var roofingMaterialUserEnteredPercentage = document.getElementById('roofing-material-user-entered-Percentage').value;
+    var roofingMaterialUserEnteredPercentage = Number(document.getElementById('roofing-material-user-entered-Percentage').value);
     var roofingMaterialUserEnteredSpecInfo = document.getElementById('roofing-material-user-entered-SpecInfo').value;
     var roofingMaterialUserEnteredClientInfo = document.getElementById('roofing-material-user-entered-ClientInfo').value;
 
     var roofingMaterialValue = calculateAmountFromPercentage(totalCost, roofingMaterialUserEnteredPercentage);
 
 
-    document.getElementById('roofing-material-Value').innerHTML = roofingMaterialValue;
+    document.getElementById('roofing-material-Value').innerHTML = roofingMaterialValue.toFixed(2);
     document.getElementById('roofing-material-spec-info-value').innerHTML = roofingMaterialUserEnteredSpecInfo;
     document.getElementById('roofing-material-client-info-value').innerHTML = roofingMaterialUserEnteredClientInfo;
 
@@ -404,14 +404,14 @@ function submitData() {
     };
 
     ///////////////////////Masnory Specifications///////
-    var masnorySpecificationsUserEnteredPercentage = document.getElementById('masonry-specifications-user-entered-Percentage').value;
+    var masnorySpecificationsUserEnteredPercentage = Number(document.getElementById('masonry-specifications-user-entered-Percentage').value);
     var masnorySpecificationsUserEnteredSpecInfo = document.getElementById('masonry-specifications-user-entered-SpecInfo').value;
     var masnorySpecificationsUserEnteredClientInfo = document.getElementById('masonry-specifications-user-entered-ClientInfo').value;
 
     var masnorySpecificationsValue = calculateAmountFromPercentage(totalCost, masnorySpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('masonry-specifications-Value').innerHTML = masnorySpecificationsValue;
+    document.getElementById('masonry-specifications-Value').innerHTML = masnorySpecificationsValue.toFixed(2);
     document.getElementById('masonry-specifications-spec-info-value').innerHTML = masnorySpecificationsUserEnteredSpecInfo;
     document.getElementById('masonry-specifications-client-info-value').innerHTML = masnorySpecificationsUserEnteredClientInfo;
 
@@ -422,14 +422,14 @@ function submitData() {
     };
 
     ///////////////////////Chimney Material//////////
-    var chimneyMaterialUserEnteredPercentage = document.getElementById('chimney-material-user-entered-Percentage').value;
+    var chimneyMaterialUserEnteredPercentage = Number(document.getElementById('chimney-material-user-entered-Percentage').value);
     var chimneyMaterialUserEnteredSpecInfo = document.getElementById('chimney-material-user-entered-SpecInfo').value;
     var chimneyMaterialUserEnteredClientInfo = document.getElementById('chimney-material-user-entered-ClientInfo').value;
 
     var chimneyMaterialValue = calculateAmountFromPercentage(totalCost, chimneyMaterialUserEnteredPercentage);
 
 
-    document.getElementById('chimney-material-Value').innerHTML = chimneyMaterialValue;
+    document.getElementById('chimney-material-Value').innerHTML = chimneyMaterialValue.toFixed(2);
     document.getElementById('chimney-material-spec-info-value').innerHTML = chimneyMaterialUserEnteredSpecInfo;
     document.getElementById('chimney-material-client-info-value').innerHTML = chimneyMaterialUserEnteredClientInfo;
 
@@ -441,14 +441,14 @@ function submitData() {
 
     /////////////////////////fireplace///////////////////
 
-    var fireplaceUserEnteredPercentage = document.getElementById('fireplace-user-entered-Percentage').value;
+    var fireplaceUserEnteredPercentage = Number(document.getElementById('fireplace-user-entered-Percentage').value);
     var fireplaceUserEnteredSpecInfo = document.getElementById('fireplace-user-entered-SpecInfo').value;
     var fireplaceUserEnteredClientInfo = document.getElementById('fireplace-user-entered-ClientInfo').value;
 
     var fireplaceValue = calculateAmountFromPercentage(totalCost, fireplaceUserEnteredPercentage);
 
 
-    document.getElementById('fireplace-Value').innerHTML = fireplaceValue;
+    document.getElementById('fireplace-Value').innerHTML = fireplaceValue.toFixed(2);
     document.getElementById('fireplace-spec-info-value').innerHTML = fireplaceUserEnteredSpecInfo;
     document.getElementById('fireplace-client-info-value').innerHTML = fireplaceUserEnteredClientInfo;
 
@@ -465,14 +465,14 @@ function submitData() {
 
     /////////////////////////brick veneer///////////////////
 
-    var brickVeneerUserEnteredPercentage = document.getElementById('brick-veneer-user-entered-Percentage').value;
+    var brickVeneerUserEnteredPercentage = Number(document.getElementById('brick-veneer-user-entered-Percentage').value);
     var brickVeneerUserEnteredSpecInfo = document.getElementById('brick-veneer-user-entered-SpecInfo').value;
     var brickVeneerUserEnteredClientInfo = document.getElementById('brick-veneer-user-entered-ClientInfo').value;
 
     var brickVeneerValue = calculateAmountFromPercentage(totalCost, brickVeneerUserEnteredPercentage);
 
 
-    document.getElementById('brick-veneer-Value').innerHTML = brickVeneerValue;
+    document.getElementById('brick-veneer-Value').innerHTML = brickVeneerValue.toFixed(2);
     document.getElementById('brick-veneer-spec-info-value').innerHTML = brickVeneerUserEnteredSpecInfo;
     document.getElementById('brick-veneer-client-info-value').innerHTML = brickVeneerUserEnteredClientInfo;
 
@@ -485,14 +485,14 @@ function submitData() {
 
     /////////////////////////Masonry Wall Material///////////////////
 
-    var masonryWallMaterialUserEnteredPercentage = document.getElementById('masonryWallMaterial-user-entered-Percentage').value;
+    var masonryWallMaterialUserEnteredPercentage = Number(document.getElementById('masonryWallMaterial-user-entered-Percentage').value);
     var masonryWallMaterialUserEnteredSpecInfo = document.getElementById('masonryWallMaterial-user-entered-SpecInfo').value;
     var masonryWallMaterialUserEnteredClientInfo = document.getElementById('masonryWallMaterial-user-entered-ClientInfo').value;
 
     var masonryWallMaterialValue = calculateAmountFromPercentage(totalCost, masonryWallMaterialUserEnteredPercentage);
 
 
-    document.getElementById('masonryWallMaterial-Value').innerHTML = masonryWallMaterialValue;
+    document.getElementById('masonryWallMaterial-Value').innerHTML = masonryWallMaterialValue.toFixed(2);
     document.getElementById('masonryWallMaterial-spec-info-value').innerHTML = masonryWallMaterialUserEnteredSpecInfo;
     document.getElementById('masonryWallMaterial-client-info-value').innerHTML = masonryWallMaterialUserEnteredClientInfo;
 
@@ -504,14 +504,14 @@ function submitData() {
 
     /////////////////////Masonry Flooring Material///////////////////
 
-    var masonryFlooringMaterialUserEnteredPercentage = document.getElementById('masonryFlooringMaterial-user-entered-Percentage').value;
+    var masonryFlooringMaterialUserEnteredPercentage = Number(document.getElementById('masonryFlooringMaterial-user-entered-Percentage').value);
     var masonryFlooringMaterialUserEnteredSpecInfo = document.getElementById('masonryFlooringMaterial-user-entered-SpecInfo').value;
     var masonryFlooringMaterialUserEnteredClientInfo = document.getElementById('masonryFlooringMaterial-user-entered-ClientInfo').value;
 
     var masonryFlooringMaterialValue = calculateAmountFromPercentage(totalCost, masonryFlooringMaterialUserEnteredPercentage);
 
 
-    document.getElementById('masonryFlooringMaterial-Value').innerHTML = masonryFlooringMaterialValue;
+    document.getElementById('masonryFlooringMaterial-Value').innerHTML = masonryFlooringMaterialValue.toFixed(2);
     document.getElementById('masonryFlooringMaterial-spec-info-value').innerHTML = masonryFlooringMaterialUserEnteredSpecInfo;
     document.getElementById('masonryFlooringMaterial-client-info-value').innerHTML = masonryFlooringMaterialUserEnteredClientInfo;
 
@@ -538,14 +538,14 @@ function submitData() {
 
     //////////////////Windows////////////////////// 
 
-    var windowsUserEnteredPercentage = document.getElementById('windows-user-entered-Percentage').value;
+    var windowsUserEnteredPercentage = Number(document.getElementById('windows-user-entered-Percentage').value);
     var windowsUserEnteredSpecInfo = document.getElementById('windows-user-entered-SpecInfo').value;
     var windowsUserEnteredClientInfo = document.getElementById('windows-user-entered-ClientInfo').value;
 
     var windowsValue = calculateAmountFromPercentage(totalCost, windowsUserEnteredPercentage);
 
 
-    document.getElementById('windows-Value').innerHTML = windowsValue;
+    document.getElementById('windows-Value').innerHTML = windowsValue.toFixed(2);
     document.getElementById('windows-spec-info-value').innerHTML = windowsUserEnteredSpecInfo;
     document.getElementById('windows-client-info-value').innerHTML = windowsUserEnteredClientInfo;
 
@@ -557,14 +557,14 @@ function submitData() {
 
     //////////////////Skylights////////////////////// 
 
-    var skylightsUserEnteredPercentage = document.getElementById('skylights-user-entered-Percentage').value;
+    var skylightsUserEnteredPercentage = Number(document.getElementById('skylights-user-entered-Percentage').value);
     var skylightsUserEnteredSpecInfo = document.getElementById('skylights-user-entered-SpecInfo').value;
     var skylightsUserEnteredClientInfo = document.getElementById('skylights-user-entered-ClientInfo').value;
 
     var skylightsValue = calculateAmountFromPercentage(totalCost, skylightsUserEnteredPercentage);
 
 
-    document.getElementById('skylights-Value').innerHTML = skylightsValue;
+    document.getElementById('skylights-Value').innerHTML = skylightsValue.toFixed(2);
     document.getElementById('skylights-spec-info-value').innerHTML = skylightsUserEnteredSpecInfo;
     document.getElementById('skylights-client-info-value').innerHTML = skylightsUserEnteredClientInfo;
 
@@ -577,14 +577,14 @@ function submitData() {
 
     //////////////////Strom Windows and Doors////////////////////// 
 
-    var stromWindowsAndDoorsUserEnteredPercentage = document.getElementById('stromWindowsAndDoors-user-entered-Percentage').value;
+    var stromWindowsAndDoorsUserEnteredPercentage = Number(document.getElementById('stromWindowsAndDoors-user-entered-Percentage').value);
     var stromWindowsAndDoorsUserEnteredSpecInfo = document.getElementById('stromWindowsAndDoors-user-entered-SpecInfo').value;
     var stromWindowsAndDoorsUserEnteredClientInfo = document.getElementById('stromWindowsAndDoors-user-entered-ClientInfo').value;
 
     var stromWindowsAndDoorsValue = calculateAmountFromPercentage(totalCost, stromWindowsAndDoorsUserEnteredPercentage);
 
 
-    document.getElementById('stromWindowsAndDoors-Value').innerHTML = stromWindowsAndDoorsValue;
+    document.getElementById('stromWindowsAndDoors-Value').innerHTML = stromWindowsAndDoorsValue.toFixed(2);
     document.getElementById('stromWindowsAndDoors-spec-info-value').innerHTML = stromWindowsAndDoorsUserEnteredSpecInfo;
     document.getElementById('stromWindowsAndDoors-client-info-value').innerHTML = stromWindowsAndDoorsUserEnteredClientInfo;
 
@@ -597,14 +597,14 @@ function submitData() {
 
     //////////////////Front Door////////////////////// 
 
-    var frontDoorUserEnteredPercentage = document.getElementById('frontDoor-user-entered-Percentage').value;
+    var frontDoorUserEnteredPercentage = Number(document.getElementById('frontDoor-user-entered-Percentage').value);
     var frontDoorUserEnteredSpecInfo = document.getElementById('frontDoor-user-entered-SpecInfo').value;
     var frontDoorUserEnteredClientInfo = document.getElementById('frontDoor-user-entered-ClientInfo').value;
 
     var frontDoorValue = calculateAmountFromPercentage(totalCost, frontDoorUserEnteredPercentage);
 
 
-    document.getElementById('frontDoor-Value').innerHTML = frontDoorValue;
+    document.getElementById('frontDoor-Value').innerHTML = frontDoorValue.toFixed(2);
     document.getElementById('frontDoor-spec-info-value').innerHTML = frontDoorUserEnteredSpecInfo;
     document.getElementById('frontDoor-client-info-value').innerHTML = frontDoorUserEnteredClientInfo;
 
@@ -617,14 +617,14 @@ function submitData() {
 
     //////////////////Other Exterior Doors////////////////////// 
 
-    var otherExteriorDoorsUserEnteredPercentage = document.getElementById('otherExteriorDoors-user-entered-Percentage').value;
+    var otherExteriorDoorsUserEnteredPercentage = Number(document.getElementById('otherExteriorDoors-user-entered-Percentage').value);
     var otherExteriorDoorsUserEnteredSpecInfo = document.getElementById('otherExteriorDoors-user-entered-SpecInfo').value;
     var otherExteriorDoorsUserEnteredClientInfo = document.getElementById('otherExteriorDoors-user-entered-ClientInfo').value;
 
     var otherExteriorDoorsValue = calculateAmountFromPercentage(totalCost, otherExteriorDoorsUserEnteredPercentage);
 
 
-    document.getElementById('otherExteriorDoors-Value').innerHTML = otherExteriorDoorsValue;
+    document.getElementById('otherExteriorDoors-Value').innerHTML = otherExteriorDoorsValue.toFixed(2);
     document.getElementById('otherExteriorDoors-spec-info-value').innerHTML = otherExteriorDoorsUserEnteredSpecInfo;
     document.getElementById('otherExteriorDoors-client-info-value').innerHTML = otherExteriorDoorsUserEnteredClientInfo;
 
@@ -637,14 +637,14 @@ function submitData() {
 
     //////////////////Interior Doors////////////////////// 
 
-    var interiorDoorsUserEnteredPercentage = document.getElementById('interiorDoors-user-entered-Percentage').value;
+    var interiorDoorsUserEnteredPercentage = Number(document.getElementById('interiorDoors-user-entered-Percentage').value);
     var interiorDoorsUserEnteredSpecInfo = document.getElementById('interiorDoors-user-entered-SpecInfo').value;
     var interiorDoorsUserEnteredClientInfo = document.getElementById('interiorDoors-user-entered-ClientInfo').value;
 
     var interiorDoorsValue = calculateAmountFromPercentage(totalCost, interiorDoorsUserEnteredPercentage);
 
 
-    document.getElementById('interiorDoors-Value').innerHTML = interiorDoorsValue;
+    document.getElementById('interiorDoors-Value').innerHTML = interiorDoorsValue.toFixed(2);
     document.getElementById('interiorDoors-spec-info-value').innerHTML = interiorDoorsUserEnteredSpecInfo;
     document.getElementById('interiorDoors-client-info-value').innerHTML = interiorDoorsUserEnteredClientInfo;
 
@@ -657,14 +657,14 @@ function submitData() {
 
     //////////////////Sliding Glass Doors////////////////////// 
 
-    var slidingGlassDoorsUserEnteredPercentage = document.getElementById('slidingGlassDoors-user-entered-Percentage').value;
+    var slidingGlassDoorsUserEnteredPercentage = Number(document.getElementById('slidingGlassDoors-user-entered-Percentage').value);
     var slidingGlassDoorsUserEnteredSpecInfo = document.getElementById('slidingGlassDoors-user-entered-SpecInfo').value;
     var slidingGlassDoorsUserEnteredClientInfo = document.getElementById('slidingGlassDoors-user-entered-ClientInfo').value;
 
     var slidingGlassDoorsValue = calculateAmountFromPercentage(totalCost, slidingGlassDoorsUserEnteredPercentage);
 
 
-    document.getElementById('slidingGlassDoors-Value').innerHTML = slidingGlassDoorsValue;
+    document.getElementById('slidingGlassDoors-Value').innerHTML = slidingGlassDoorsValue.toFixed(2);
     document.getElementById('slidingGlassDoors-spec-info-value').innerHTML = slidingGlassDoorsUserEnteredSpecInfo;
     document.getElementById('slidingGlassDoors-client-info-value').innerHTML = slidingGlassDoorsUserEnteredClientInfo;
 
@@ -677,14 +677,14 @@ function submitData() {
 
     //////////////////Garage Door////////////////////// 
 
-    var garageDoorUserEnteredPercentage = document.getElementById('garageDoor-user-entered-Percentage').value;
+    var garageDoorUserEnteredPercentage = Number(document.getElementById('garageDoor-user-entered-Percentage').value);
     var garageDoorUserEnteredSpecInfo = document.getElementById('garageDoor-user-entered-SpecInfo').value;
     var garageDoorUserEnteredClientInfo = document.getElementById('garageDoor-user-entered-ClientInfo').value;
 
     var garageDoorValue = calculateAmountFromPercentage(totalCost, garageDoorUserEnteredPercentage);
 
 
-    document.getElementById('garageDoor-Value').innerHTML = garageDoorValue;
+    document.getElementById('garageDoor-Value').innerHTML = garageDoorValue.toFixed(2);
     document.getElementById('garageDoor-spec-info-value').innerHTML = garageDoorUserEnteredSpecInfo;
     document.getElementById('garageDoor-client-info-value').innerHTML = garageDoorUserEnteredClientInfo;
 
@@ -697,14 +697,14 @@ function submitData() {
 
     //////////////////Window and Door Hardware////////////////////// 
 
-    var windowAndDoorHardwareUserEnteredPercentage = document.getElementById('windowAndDoorHardware-user-entered-Percentage').value;
+    var windowAndDoorHardwareUserEnteredPercentage = Number(document.getElementById('windowAndDoorHardware-user-entered-Percentage').value);
     var windowAndDoorHardwareUserEnteredSpecInfo = document.getElementById('windowAndDoorHardware-user-entered-SpecInfo').value;
     var windowAndDoorHardwareUserEnteredClientInfo = document.getElementById('windowAndDoorHardware-user-entered-ClientInfo').value;
 
     var windowAndDoorHardwareValue = calculateAmountFromPercentage(totalCost, windowAndDoorHardwareUserEnteredPercentage);
 
 
-    document.getElementById('windowAndDoorHardware-Value').innerHTML = windowAndDoorHardwareValue;
+    document.getElementById('windowAndDoorHardware-Value').innerHTML = windowAndDoorHardwareValue.toFixed(2);
     document.getElementById('windowAndDoorHardware-spec-info-value').innerHTML = windowAndDoorHardwareUserEnteredSpecInfo;
     document.getElementById('windowAndDoorHardware-client-info-value').innerHTML = windowAndDoorHardwareUserEnteredClientInfo;
 
@@ -729,14 +729,14 @@ function submitData() {
 
     ///////////////Insulation///////////////////////////
 
-    var insulationUserEnteredPercentage = document.getElementById('insulation-user-entered-Percentage').value;
+    var insulationUserEnteredPercentage = Number(document.getElementById('insulation-user-entered-Percentage').value);
     var insulationUserEnteredSpecInfo = document.getElementById('insulation-user-entered-SpecInfo').value;
     var insulationUserEnteredClientInfo = document.getElementById('insulation-user-entered-ClientInfo').value;
 
     var insulationValue = calculateAmountFromPercentage(totalCost, insulationUserEnteredPercentage);
 
 
-    document.getElementById('insulation-Value').innerHTML = insulationValue;
+    document.getElementById('insulation-Value').innerHTML = insulationValue.toFixed(2);
     document.getElementById('insulation-spec-info-value').innerHTML = insulationUserEnteredSpecInfo;
     document.getElementById('insulation-client-info-value').innerHTML = insulationUserEnteredClientInfo;
 
@@ -762,14 +762,14 @@ function submitData() {
 
     ///////////////Exterior Trim///////////////////////////
 
-    var exteriorTrimUserEnteredPercentage = document.getElementById('exteriorTrim-user-entered-Percentage').value;
+    var exteriorTrimUserEnteredPercentage = Number(document.getElementById('exteriorTrim-user-entered-Percentage').value);
     var exteriorTrimUserEnteredSpecInfo = document.getElementById('exteriorTrim-user-entered-SpecInfo').value;
     var exteriorTrimUserEnteredClientInfo = document.getElementById('exteriorTrim-user-entered-ClientInfo').value;
 
     var exteriorTrimValue = calculateAmountFromPercentage(totalCost, exteriorTrimUserEnteredPercentage);
 
 
-    document.getElementById('exteriorTrim-Value').innerHTML = exteriorTrimValue;
+    document.getElementById('exteriorTrim-Value').innerHTML = exteriorTrimValue.toFixed(2);
     document.getElementById('exteriorTrim-spec-info-value').innerHTML = exteriorTrimUserEnteredSpecInfo;
     document.getElementById('exteriorTrim-client-info-value').innerHTML = exteriorTrimUserEnteredClientInfo;
 
@@ -782,14 +782,14 @@ function submitData() {
 
     ///////////////Exterior Painting///////////////////////////
 
-    var exteriorPaintingUserEnteredPercentage = document.getElementById('exteriorPainting-user-entered-Percentage').value;
+    var exteriorPaintingUserEnteredPercentage = Number(document.getElementById('exteriorPainting-user-entered-Percentage').value);
     var exteriorPaintingUserEnteredSpecInfo = document.getElementById('exteriorPainting-user-entered-SpecInfo').value;
     var exteriorPaintingUserEnteredClientInfo = document.getElementById('exteriorPainting-user-entered-ClientInfo').value;
 
     var exteriorPaintingValue = calculateAmountFromPercentage(totalCost, exteriorPaintingUserEnteredPercentage);
 
 
-    document.getElementById('exteriorPainting-Value').innerHTML = exteriorPaintingValue;
+    document.getElementById('exteriorPainting-Value').innerHTML = exteriorPaintingValue.toFixed(2);
     document.getElementById('exteriorPainting-spec-info-value').innerHTML = exteriorPaintingUserEnteredSpecInfo;
     document.getElementById('exteriorPainting-client-info-value').innerHTML = exteriorPaintingUserEnteredClientInfo;
 
@@ -801,14 +801,14 @@ function submitData() {
 
     ///////////////Exterior Paint///////////////////////////
 
-    var exteriorPaintUserEnteredPercentage = document.getElementById('exteriorPaint-user-entered-Percentage').value;
+    var exteriorPaintUserEnteredPercentage = Number(document.getElementById('exteriorPaint-user-entered-Percentage').value);
     var exteriorPaintUserEnteredSpecInfo = document.getElementById('exteriorPaint-user-entered-SpecInfo').value;
     var exteriorPaintUserEnteredClientInfo = document.getElementById('exteriorPaint-user-entered-ClientInfo').value;
 
     var exteriorPaintValue = calculateAmountFromPercentage(totalCost, exteriorPaintUserEnteredPercentage);
 
 
-    document.getElementById('exteriorPaint-Value').innerHTML = exteriorPaintValue;
+    document.getElementById('exteriorPaint-Value').innerHTML = exteriorPaintValue.toFixed(2);
     document.getElementById('exteriorPaint-spec-info-value').innerHTML = exteriorPaintUserEnteredSpecInfo;
     document.getElementById('exteriorPaint-client-info-value').innerHTML = exteriorPaintUserEnteredClientInfo;
 
@@ -833,14 +833,14 @@ function submitData() {
 
     ///////////////drywall///////////////////////////
 
-    var drywallUserEnteredPercentage = document.getElementById('drywall-user-entered-Percentage').value;
+    var drywallUserEnteredPercentage = Number(document.getElementById('drywall-user-entered-Percentage').value);
     var drywallUserEnteredSpecInfo = document.getElementById('drywall-user-entered-SpecInfo').value;
     var drywallUserEnteredClientInfo = document.getElementById('drywall-user-entered-ClientInfo').value;
 
     var drywallValue = calculateAmountFromPercentage(totalCost, drywallUserEnteredPercentage);
 
 
-    document.getElementById('drywall-Value').innerHTML = drywallValue;
+    document.getElementById('drywall-Value').innerHTML = drywallValue.toFixed(2);
     document.getElementById('drywall-spec-info-value').innerHTML = drywallUserEnteredSpecInfo;
     document.getElementById('drywall-client-info-value').innerHTML = drywallUserEnteredClientInfo;
 
@@ -867,14 +867,14 @@ function submitData() {
 
     ///////////////Flooring Specifications///////////////////////////
 
-    var flooringSpecificationsUserEnteredPercentage = document.getElementById('flooringSpecifications-user-entered-Percentage').value;
+    var flooringSpecificationsUserEnteredPercentage = Number(document.getElementById('flooringSpecifications-user-entered-Percentage').value);
     var flooringSpecificationsUserEnteredSpecInfo = document.getElementById('flooringSpecifications-user-entered-SpecInfo').value;
     var flooringSpecificationsUserEnteredClientInfo = document.getElementById('flooringSpecifications-user-entered-ClientInfo').value;
 
     var flooringSpecificationsValue = calculateAmountFromPercentage(totalCost, flooringSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('flooringSpecifications-Value').innerHTML = flooringSpecificationsValue;
+    document.getElementById('flooringSpecifications-Value').innerHTML = flooringSpecificationsValue.toFixed(2);
     document.getElementById('flooringSpecifications-spec-info-value').innerHTML = flooringSpecificationsUserEnteredSpecInfo;
     document.getElementById('flooringSpecifications-client-info-value').innerHTML = flooringSpecificationsUserEnteredClientInfo;
 
@@ -886,14 +886,14 @@ function submitData() {
 
     ///////////////Resilient Flooring///////////////////////////
 
-    var resilientFlooringUserEnteredPercentage = document.getElementById('resilientFlooring-user-entered-Percentage').value;
+    var resilientFlooringUserEnteredPercentage = Number(document.getElementById('resilientFlooring-user-entered-Percentage').value);
     var resilientFlooringUserEnteredSpecInfo = document.getElementById('resilientFlooring-user-entered-SpecInfo').value;
     var resilientFlooringUserEnteredClientInfo = document.getElementById('resilientFlooring-user-entered-ClientInfo').value;
 
     var resilientFlooringValue = calculateAmountFromPercentage(totalCost, resilientFlooringUserEnteredPercentage);
 
 
-    document.getElementById('resilientFlooring-Value').innerHTML = resilientFlooringValue;
+    document.getElementById('resilientFlooring-Value').innerHTML = resilientFlooringValue.toFixed(2);
     document.getElementById('resilientFlooring-spec-info-value').innerHTML = resilientFlooringUserEnteredSpecInfo;
     document.getElementById('resilientFlooring-client-info-value').innerHTML = resilientFlooringUserEnteredClientInfo;
 
@@ -905,14 +905,14 @@ function submitData() {
 
     ///////////////Carpeting///////////////////////////
 
-    var carpetingUserEnteredPercentage = document.getElementById('carpeting-user-entered-Percentage').value;
+    var carpetingUserEnteredPercentage = Number(document.getElementById('carpeting-user-entered-Percentage').value);
     var carpetingUserEnteredSpecInfo = document.getElementById('carpeting-user-entered-SpecInfo').value;
     var carpetingUserEnteredClientInfo = document.getElementById('carpeting-user-entered-ClientInfo').value;
 
     var carpetingValue = calculateAmountFromPercentage(totalCost, carpetingUserEnteredPercentage);
 
 
-    document.getElementById('carpeting-Value').innerHTML = carpetingValue;
+    document.getElementById('carpeting-Value').innerHTML = carpetingValue.toFixed(2);
     document.getElementById('carpeting-spec-info-value').innerHTML = carpetingUserEnteredSpecInfo;
     document.getElementById('carpeting-client-info-value').innerHTML = carpetingUserEnteredClientInfo;
 
@@ -924,14 +924,14 @@ function submitData() {
 
     ///////////////Hardwood Flooring///////////////////////////
 
-    var hardwoodFlooringUserEnteredPercentage = document.getElementById('hardwoodFlooring-user-entered-Percentage').value;
+    var hardwoodFlooringUserEnteredPercentage = Number(document.getElementById('hardwoodFlooring-user-entered-Percentage').value);
     var hardwoodFlooringUserEnteredSpecInfo = document.getElementById('hardwoodFlooring-user-entered-SpecInfo').value;
     var hardwoodFlooringUserEnteredClientInfo = document.getElementById('hardwoodFlooring-user-entered-ClientInfo').value;
 
     var hardwoodFlooringValue = calculateAmountFromPercentage(totalCost, hardwoodFlooringUserEnteredPercentage);
 
 
-    document.getElementById('hardwoodFlooring-Value').innerHTML = hardwoodFlooringValue;
+    document.getElementById('hardwoodFlooring-Value').innerHTML = hardwoodFlooringValue.toFixed(2);
     document.getElementById('hardwoodFlooring-spec-info-value').innerHTML = hardwoodFlooringUserEnteredSpecInfo;
     document.getElementById('hardwoodFlooring-client-info-value').innerHTML = hardwoodFlooringUserEnteredClientInfo;
 
@@ -956,14 +956,14 @@ function submitData() {
 
     ///////////////Interior///////////////////////////
 
-    var interiorUserEnteredPercentage = document.getElementById('interior-user-entered-Percentage').value;
+    var interiorUserEnteredPercentage = Number(document.getElementById('interior-user-entered-Percentage').value);
     var interiorUserEnteredSpecInfo = document.getElementById('interior-user-entered-SpecInfo').value;
     var interiorUserEnteredClientInfo = document.getElementById('interior-user-entered-ClientInfo').value;
 
     var interiorValue = calculateAmountFromPercentage(totalCost, interiorUserEnteredPercentage);
 
 
-    document.getElementById('interior-Value').innerHTML = interiorValue;
+    document.getElementById('interior-Value').innerHTML = interiorValue.toFixed(2);
     document.getElementById('interior-spec-info-value').innerHTML = interiorUserEnteredSpecInfo;
     document.getElementById('interior-client-info-value').innerHTML = interiorUserEnteredClientInfo;
 
@@ -990,14 +990,14 @@ function submitData() {
 
     ///////////////Ceramic Tile Specifications///////////////////////////
 
-    var ceramicTileSpecificationsUserEnteredPercentage = document.getElementById('ceramicTileSpecifications-user-entered-Percentage').value;
+    var ceramicTileSpecificationsUserEnteredPercentage = Number(document.getElementById('ceramicTileSpecifications-user-entered-Percentage').value);
     var ceramicTileSpecificationsUserEnteredSpecInfo = document.getElementById('ceramicTileSpecifications-user-entered-SpecInfo').value;
     var ceramicTileSpecificationsUserEnteredClientInfo = document.getElementById('ceramicTileSpecifications-user-entered-ClientInfo').value;
 
     var ceramicTileSpecificationsValue = calculateAmountFromPercentage(totalCost, ceramicTileSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('ceramicTileSpecifications-Value').innerHTML = ceramicTileSpecificationsValue;
+    document.getElementById('ceramicTileSpecifications-Value').innerHTML = ceramicTileSpecificationsValue.toFixed(2);
     document.getElementById('ceramicTileSpecifications-spec-info-value').innerHTML = ceramicTileSpecificationsUserEnteredSpecInfo;
     document.getElementById('ceramicTileSpecifications-client-info-value').innerHTML = ceramicTileSpecificationsUserEnteredClientInfo;
 
@@ -1009,14 +1009,14 @@ function submitData() {
 
     ///////////////Ceramic Tile ///////////////////////////
 
-    var ceramicTileUserEnteredPercentage = document.getElementById('ceramicTile-user-entered-Percentage').value;
+    var ceramicTileUserEnteredPercentage = Number(document.getElementById('ceramicTile-user-entered-Percentage').value);
     var ceramicTileUserEnteredSpecInfo = document.getElementById('ceramicTile-user-entered-SpecInfo').value;
     var ceramicTileUserEnteredClientInfo = document.getElementById('ceramicTile-user-entered-ClientInfo').value;
 
     var ceramicTileValue = calculateAmountFromPercentage(totalCost, ceramicTileUserEnteredPercentage);
 
 
-    document.getElementById('ceramicTile-Value').innerHTML = ceramicTileValue;
+    document.getElementById('ceramicTile-Value').innerHTML = ceramicTileValue.toFixed(2);
     document.getElementById('ceramicTile-spec-info-value').innerHTML = ceramicTileUserEnteredSpecInfo;
     document.getElementById('ceramicTile-client-info-value').innerHTML = ceramicTileUserEnteredClientInfo;
 
@@ -1042,14 +1042,14 @@ function submitData() {
 
     ///////////////Cabinet Specifications///////////////////////////
 
-    var cabinetSpecificationsUserEnteredPercentage = document.getElementById('cabinetSpecifications-user-entered-Percentage').value;
+    var cabinetSpecificationsUserEnteredPercentage = Number(document.getElementById('cabinetSpecifications-user-entered-Percentage').value);
     var cabinetSpecificationsUserEnteredSpecInfo = document.getElementById('cabinetSpecifications-user-entered-SpecInfo').value;
     var cabinetSpecificationsUserEnteredClientInfo = document.getElementById('cabinetSpecifications-user-entered-ClientInfo').value;
 
     var cabinetSpecificationsValue = calculateAmountFromPercentage(totalCost, cabinetSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('cabinetSpecifications-Value').innerHTML = cabinetSpecificationsValue;
+    document.getElementById('cabinetSpecifications-Value').innerHTML = cabinetSpecificationsValue.toFixed(2);
     document.getElementById('cabinetSpecifications-spec-info-value').innerHTML = cabinetSpecificationsUserEnteredSpecInfo;
     document.getElementById('cabinetSpecifications-client-info-value').innerHTML = cabinetSpecificationsUserEnteredClientInfo;
 
@@ -1061,14 +1061,14 @@ function submitData() {
 
     ///////////////Kitchen Cabinets ///////////////////////////
 
-    var kitchenCabinetsUserEnteredPercentage = document.getElementById('kitchenCabinets-user-entered-Percentage').value;
+    var kitchenCabinetsUserEnteredPercentage = Number(document.getElementById('kitchenCabinets-user-entered-Percentage').value);
     var kitchenCabinetsUserEnteredSpecInfo = document.getElementById('kitchenCabinets-user-entered-SpecInfo').value;
     var kitchenCabinetsUserEnteredClientInfo = document.getElementById('kitchenCabinets-user-entered-ClientInfo').value;
 
     var kitchenCabinetsValue = calculateAmountFromPercentage(totalCost, kitchenCabinetsUserEnteredPercentage);
 
 
-    document.getElementById('kitchenCabinets-Value').innerHTML = kitchenCabinetsValue;
+    document.getElementById('kitchenCabinets-Value').innerHTML = kitchenCabinetsValue.toFixed(2);
     document.getElementById('kitchenCabinets-spec-info-value').innerHTML = kitchenCabinetsUserEnteredSpecInfo;
     document.getElementById('kitchenCabinets-client-info-value').innerHTML = kitchenCabinetsUserEnteredClientInfo;
 
@@ -1080,14 +1080,14 @@ function submitData() {
 
     ///////////////Counter Tops ///////////////////////////
 
-    var counterTopsUserEnteredPercentage = document.getElementById('counterTops-user-entered-Percentage').value;
+    var counterTopsUserEnteredPercentage = Number(document.getElementById('counterTops-user-entered-Percentage').value);
     var counterTopsUserEnteredSpecInfo = document.getElementById('counterTops-user-entered-SpecInfo').value;
     var counterTopsUserEnteredClientInfo = document.getElementById('counterTops-user-entered-ClientInfo').value;
 
     var counterTopsValue = calculateAmountFromPercentage(totalCost, counterTopsUserEnteredPercentage);
 
 
-    document.getElementById('counterTops-Value').innerHTML = counterTopsValue;
+    document.getElementById('counterTops-Value').innerHTML = counterTopsValue.toFixed(2);
     document.getElementById('counterTops-spec-info-value').innerHTML = counterTopsUserEnteredSpecInfo;
     document.getElementById('counterTops-client-info-value').innerHTML = counterTopsUserEnteredClientInfo;
 
@@ -1099,14 +1099,14 @@ function submitData() {
 
     ///////////////Bathroom Cabinets////////////////////////
 
-    var bathroomCabinetsUserEnteredPercentage = document.getElementById('bathroomCabinets-user-entered-Percentage').value;
+    var bathroomCabinetsUserEnteredPercentage = Number(document.getElementById('bathroomCabinets-user-entered-Percentage').value);
     var bathroomCabinetsUserEnteredSpecInfo = document.getElementById('bathroomCabinets-user-entered-SpecInfo').value;
     var bathroomCabinetsUserEnteredClientInfo = document.getElementById('bathroomCabinets-user-entered-ClientInfo').value;
 
     var bathroomCabinetsValue = calculateAmountFromPercentage(totalCost, bathroomCabinetsUserEnteredPercentage);
 
 
-    document.getElementById('bathroomCabinets-Value').innerHTML = bathroomCabinetsValue;
+    document.getElementById('bathroomCabinets-Value').innerHTML = bathroomCabinetsValue.toFixed(2);
     document.getElementById('bathroomCabinets-spec-info-value').innerHTML = bathroomCabinetsUserEnteredSpecInfo;
     document.getElementById('bathroomCabinets-client-info-value').innerHTML = bathroomCabinetsUserEnteredClientInfo;
 
@@ -1117,14 +1117,14 @@ function submitData() {
     };
     ///////////////Cabinet Hardware////////////////////////
 
-    var cabinetHardwareUserEnteredPercentage = document.getElementById('cabinetHardware-user-entered-Percentage').value;
+    var cabinetHardwareUserEnteredPercentage = Number(document.getElementById('cabinetHardware-user-entered-Percentage').value);
     var cabinetHardwareUserEnteredSpecInfo = document.getElementById('cabinetHardware-user-entered-SpecInfo').value;
     var cabinetHardwareUserEnteredClientInfo = document.getElementById('cabinetHardware-user-entered-ClientInfo').value;
 
     var cabinetHardwareValue = calculateAmountFromPercentage(totalCost, cabinetHardwareUserEnteredPercentage);
 
 
-    document.getElementById('cabinetHardware-Value').innerHTML = cabinetHardwareValue;
+    document.getElementById('cabinetHardware-Value').innerHTML = cabinetHardwareValue.toFixed(2);
     document.getElementById('cabinetHardware-spec-info-value').innerHTML = cabinetHardwareUserEnteredSpecInfo;
     document.getElementById('cabinetHardware-client-info-value').innerHTML = cabinetHardwareUserEnteredClientInfo;
 
@@ -1148,14 +1148,14 @@ function submitData() {
 
     ///////////////Appliance Specifications///////////////////////////
 
-    var applianceSpecificationsUserEnteredPercentage = document.getElementById('applianceSpecifications-user-entered-Percentage').value;
+    var applianceSpecificationsUserEnteredPercentage = Number(document.getElementById('applianceSpecifications-user-entered-Percentage').value);
     var applianceSpecificationsUserEnteredSpecInfo = document.getElementById('applianceSpecifications-user-entered-SpecInfo').value;
     var applianceSpecificationsUserEnteredClientInfo = document.getElementById('applianceSpecifications-user-entered-ClientInfo').value;
 
     var applianceSpecificationsValue = calculateAmountFromPercentage(totalCost, applianceSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('applianceSpecifications-Value').innerHTML = applianceSpecificationsValue;
+    document.getElementById('applianceSpecifications-Value').innerHTML = applianceSpecificationsValue.toFixed(2);
     document.getElementById('applianceSpecifications-spec-info-value').innerHTML = applianceSpecificationsUserEnteredSpecInfo;
     document.getElementById('applianceSpecifications-client-info-value').innerHTML = applianceSpecificationsUserEnteredClientInfo;
 
@@ -1168,14 +1168,14 @@ function submitData() {
 
     ///////////////Range///////////////////////////
 
-    var rangeUserEnteredPercentage = document.getElementById('range-user-entered-Percentage').value;
+    var rangeUserEnteredPercentage = Number(document.getElementById('range-user-entered-Percentage').value);
     var rangeUserEnteredSpecInfo = document.getElementById('range-user-entered-SpecInfo').value;
     var rangeUserEnteredClientInfo = document.getElementById('range-user-entered-ClientInfo').value;
 
     var rangeValue = calculateAmountFromPercentage(totalCost, rangeUserEnteredPercentage);
 
 
-    document.getElementById('range-Value').innerHTML = rangeValue;
+    document.getElementById('range-Value').innerHTML = rangeValue.toFixed(2);
     document.getElementById('range-spec-info-value').innerHTML = rangeUserEnteredSpecInfo;
     document.getElementById('range-client-info-value').innerHTML = rangeUserEnteredClientInfo;
 
@@ -1186,14 +1186,14 @@ function submitData() {
     };
     ///////////////Range Hood///////////////////////////
 
-    var rangeHoodUserEnteredPercentage = document.getElementById('rangeHood-user-entered-Percentage').value;
+    var rangeHoodUserEnteredPercentage = Number(document.getElementById('rangeHood-user-entered-Percentage').value);
     var rangeHoodUserEnteredSpecInfo = document.getElementById('rangeHood-user-entered-SpecInfo').value;
     var rangeHoodUserEnteredClientInfo = document.getElementById('rangeHood-user-entered-ClientInfo').value;
 
     var rangeHoodValue = calculateAmountFromPercentage(totalCost, rangeHoodUserEnteredPercentage);
 
 
-    document.getElementById('rangeHood-Value').innerHTML = rangeHoodValue;
+    document.getElementById('rangeHood-Value').innerHTML = rangeHoodValue.toFixed(2);
     document.getElementById('rangeHood-spec-info-value').innerHTML = rangeHoodUserEnteredSpecInfo;
     document.getElementById('rangeHood-client-info-value').innerHTML = rangeHoodUserEnteredClientInfo;
 
@@ -1205,14 +1205,14 @@ function submitData() {
 
     ///////////////Disposal///////////////////////////
 
-    var disposalUserEnteredPercentage = document.getElementById('disposal-user-entered-Percentage').value;
+    var disposalUserEnteredPercentage = Number(document.getElementById('disposal-user-entered-Percentage').value);
     var disposalUserEnteredSpecInfo = document.getElementById('disposal-user-entered-SpecInfo').value;
     var disposalUserEnteredClientInfo = document.getElementById('disposal-user-entered-ClientInfo').value;
 
     var disposalValue = calculateAmountFromPercentage(totalCost, disposalUserEnteredPercentage);
 
 
-    document.getElementById('disposal-Value').innerHTML = disposalValue;
+    document.getElementById('disposal-Value').innerHTML = disposalValue.toFixed(2);
     document.getElementById('disposal-spec-info-value').innerHTML = disposalUserEnteredSpecInfo;
     document.getElementById('disposal-client-info-value').innerHTML = disposalUserEnteredClientInfo;
 
@@ -1225,14 +1225,14 @@ function submitData() {
 
     ///////////////Dishwasher///////////////////////////
 
-    var dishwasherUserEnteredPercentage = document.getElementById('dishwasher-user-entered-Percentage').value;
+    var dishwasherUserEnteredPercentage = Number(document.getElementById('dishwasher-user-entered-Percentage').value);
     var dishwasherUserEnteredSpecInfo = document.getElementById('dishwasher-user-entered-SpecInfo').value;
     var dishwasherUserEnteredClientInfo = document.getElementById('dishwasher-user-entered-ClientInfo').value;
 
     var dishwasherValue = calculateAmountFromPercentage(totalCost, dishwasherUserEnteredPercentage);
 
 
-    document.getElementById('dishwasher-Value').innerHTML = dishwasherValue;
+    document.getElementById('dishwasher-Value').innerHTML = dishwasherValue.toFixed(2);
     document.getElementById('dishwasher-spec-info-value').innerHTML = dishwasherUserEnteredSpecInfo;
     document.getElementById('dishwasher-client-info-value').innerHTML = dishwasherUserEnteredClientInfo;
 
@@ -1246,14 +1246,14 @@ function submitData() {
 
     ///////////////Refrigerator///////////////////////////
 
-    var refrigeratorUserEnteredPercentage = document.getElementById('refrigerator-user-entered-Percentage').value;
+    var refrigeratorUserEnteredPercentage = Number(document.getElementById('refrigerator-user-entered-Percentage').value);
     var refrigeratorUserEnteredSpecInfo = document.getElementById('refrigerator-user-entered-SpecInfo').value;
     var refrigeratorUserEnteredClientInfo = document.getElementById('refrigerator-user-entered-ClientInfo').value;
 
     var refrigeratorValue = calculateAmountFromPercentage(totalCost, refrigeratorUserEnteredPercentage);
 
 
-    document.getElementById('refrigerator-Value').innerHTML = refrigeratorValue;
+    document.getElementById('refrigerator-Value').innerHTML = refrigeratorValue.toFixed(2);
     document.getElementById('refrigerator-spec-info-value').innerHTML = refrigeratorUserEnteredSpecInfo;
     document.getElementById('refrigerator-client-info-value').innerHTML = refrigeratorUserEnteredClientInfo;
 
@@ -1267,14 +1267,14 @@ function submitData() {
 
     ///////////////Washer and Dryer///////////////////////////
 
-    var washerAndDryerUserEnteredPercentage = document.getElementById('washerAndDryer-user-entered-Percentage').value;
+    var washerAndDryerUserEnteredPercentage = Number(document.getElementById('washerAndDryer-user-entered-Percentage').value);
     var washerAndDryerUserEnteredSpecInfo = document.getElementById('washerAndDryer-user-entered-SpecInfo').value;
     var washerAndDryerUserEnteredClientInfo = document.getElementById('washerAndDryer-user-entered-ClientInfo').value;
 
     var washerAndDryerValue = calculateAmountFromPercentage(totalCost, washerAndDryerUserEnteredPercentage);
 
 
-    document.getElementById('washerAndDryer-Value').innerHTML = washerAndDryerValue;
+    document.getElementById('washerAndDryer-Value').innerHTML = washerAndDryerValue.toFixed(2);
     document.getElementById('washerAndDryer-spec-info-value').innerHTML = washerAndDryerUserEnteredSpecInfo;
     document.getElementById('washerAndDryer-client-info-value').innerHTML = washerAndDryerUserEnteredClientInfo;
 
@@ -1288,14 +1288,14 @@ function submitData() {
 
     ///////////////Microwave///////////////////////////
 
-    var microwaveUserEnteredPercentage = document.getElementById('microwave-user-entered-Percentage').value;
+    var microwaveUserEnteredPercentage = Number(document.getElementById('microwave-user-entered-Percentage').value);
     var microwaveUserEnteredSpecInfo = document.getElementById('microwave-user-entered-SpecInfo').value;
     var microwaveUserEnteredClientInfo = document.getElementById('microwave-user-entered-ClientInfo').value;
 
     var microwaveValue = calculateAmountFromPercentage(totalCost, microwaveUserEnteredPercentage);
 
 
-    document.getElementById('microwave-Value').innerHTML = microwaveValue;
+    document.getElementById('microwave-Value').innerHTML = microwaveValue.toFixed(2);
     document.getElementById('microwave-spec-info-value').innerHTML = microwaveUserEnteredSpecInfo;
     document.getElementById('microwave-client-info-value').innerHTML = microwaveUserEnteredClientInfo;
 
@@ -1307,14 +1307,14 @@ function submitData() {
 
     ///////////////Vacuum///////////////////////////
 
-    var vacuumUserEnteredPercentage = document.getElementById('vacuum-user-entered-Percentage').value;
+    var vacuumUserEnteredPercentage = Number(document.getElementById('vacuum-user-entered-Percentage').value);
     var vacuumUserEnteredSpecInfo = document.getElementById('vacuum-user-entered-SpecInfo').value;
     var vacuumUserEnteredClientInfo = document.getElementById('vacuum-user-entered-ClientInfo').value;
 
     var vacuumValue = calculateAmountFromPercentage(totalCost, vacuumUserEnteredPercentage);
 
 
-    document.getElementById('vacuum-Value').innerHTML = vacuumValue;
+    document.getElementById('vacuum-Value').innerHTML = vacuumValue.toFixed(2);
     document.getElementById('vacuum-spec-info-value').innerHTML = vacuumUserEnteredSpecInfo;
     document.getElementById('vacuum-client-info-value').innerHTML = vacuumUserEnteredClientInfo;
 
@@ -1326,14 +1326,14 @@ function submitData() {
 
     ///////////////Appliance(s)///////////////////////////
 
-    var appliancesUserEnteredPercentage = document.getElementById('appliances-user-entered-Percentage').value;
+    var appliancesUserEnteredPercentage = Number(document.getElementById('appliances-user-entered-Percentage').value);
     var appliancesUserEnteredSpecInfo = document.getElementById('appliances-user-entered-SpecInfo').value;
     var appliancesUserEnteredClientInfo = document.getElementById('appliances-user-entered-ClientInfo').value;
 
     var appliancesValue = calculateAmountFromPercentage(totalCost, appliancesUserEnteredPercentage);
 
 
-    document.getElementById('appliances-Value').innerHTML = appliancesValue;
+    document.getElementById('appliances-Value').innerHTML = appliancesValue.toFixed(2);
     document.getElementById('appliances-spec-info-value').innerHTML = appliancesUserEnteredSpecInfo;
     document.getElementById('appliances-client-info-value').innerHTML = appliancesUserEnteredClientInfo;
 
@@ -1359,14 +1359,14 @@ function submitData() {
 
     ///////////////Finish Plumbing Specifications////////////////////
 
-    var finishPlumbingSpecificationsUserEnteredPercentage = document.getElementById('finishPlumbingSpecifications-user-entered-Percentage').value;
+    var finishPlumbingSpecificationsUserEnteredPercentage = Number(document.getElementById('finishPlumbingSpecifications-user-entered-Percentage').value);
     var finishPlumbingSpecificationsUserEnteredSpecInfo = document.getElementById('finishPlumbingSpecifications-user-entered-SpecInfo').value;
     var finishPlumbingSpecificationsUserEnteredClientInfo = document.getElementById('finishPlumbingSpecifications-user-entered-ClientInfo').value;
 
     var finishPlumbingSpecificationsValue = calculateAmountFromPercentage(totalCost, finishPlumbingSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('finishPlumbingSpecifications-Value').innerHTML = finishPlumbingSpecificationsValue;
+    document.getElementById('finishPlumbingSpecifications-Value').innerHTML = finishPlumbingSpecificationsValue.toFixed(2);
     document.getElementById('finishPlumbingSpecifications-spec-info-value').innerHTML = finishPlumbingSpecificationsUserEnteredSpecInfo;
     document.getElementById('finishPlumbingSpecifications-client-info-value').innerHTML = finishPlumbingSpecificationsUserEnteredClientInfo;
 
@@ -1378,14 +1378,14 @@ function submitData() {
 
     ///////////////Plumbing Fixtures:////////////////////
 
-    var plumbingFixturesUserEnteredPercentage = document.getElementById('plumbingFixtures-user-entered-Percentage').value;
+    var plumbingFixturesUserEnteredPercentage = Number(document.getElementById('plumbingFixtures-user-entered-Percentage').value);
     var plumbingFixturesUserEnteredSpecInfo = document.getElementById('plumbingFixtures-user-entered-SpecInfo').value;
     var plumbingFixturesUserEnteredClientInfo = document.getElementById('plumbingFixtures-user-entered-ClientInfo').value;
 
     var plumbingFixturesValue = calculateAmountFromPercentage(totalCost, plumbingFixturesUserEnteredPercentage);
 
 
-    document.getElementById('plumbingFixtures-Value').innerHTML = plumbingFixturesValue;
+    document.getElementById('plumbingFixtures-Value').innerHTML = plumbingFixturesValue.toFixed(2);
     document.getElementById('plumbingFixtures-spec-info-value').innerHTML = plumbingFixturesUserEnteredSpecInfo;
     document.getElementById('plumbingFixtures-client-info-value').innerHTML = plumbingFixturesUserEnteredClientInfo;
 
@@ -1411,14 +1411,14 @@ function submitData() {
 
     ///////////////Finish Electrical Specifications:////////////////////
 
-    var finishElectricalSpecificationsUserEnteredPercentage = document.getElementById('finishElectricalSpecifications-user-entered-Percentage').value;
+    var finishElectricalSpecificationsUserEnteredPercentage = Number(document.getElementById('finishElectricalSpecifications-user-entered-Percentage').value);
     var finishElectricalSpecificationsUserEnteredSpecInfo = document.getElementById('finishElectricalSpecifications-user-entered-SpecInfo').value;
     var finishElectricalSpecificationsUserEnteredClientInfo = document.getElementById('finishElectricalSpecifications-user-entered-ClientInfo').value;
 
     var finishElectricalSpecificationsValue = calculateAmountFromPercentage(totalCost, finishElectricalSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('finishElectricalSpecifications-Value').innerHTML = finishElectricalSpecificationsValue;
+    document.getElementById('finishElectricalSpecifications-Value').innerHTML = finishElectricalSpecificationsValue.toFixed(2);
     document.getElementById('finishElectricalSpecifications-spec-info-value').innerHTML = finishElectricalSpecificationsUserEnteredSpecInfo;
     document.getElementById('finishElectricalSpecifications-client-info-value').innerHTML = finishElectricalSpecificationsUserEnteredClientInfo;
 
@@ -1430,14 +1430,14 @@ function submitData() {
 
     ///////////////Electrical Fixtures:////////////////////
 
-    var electricalFixturesUserEnteredPercentage = document.getElementById('electricalFixtures-user-entered-Percentage').value;
+    var electricalFixturesUserEnteredPercentage = Number(document.getElementById('electricalFixtures-user-entered-Percentage').value);
     var electricalFixturesUserEnteredSpecInfo = document.getElementById('electricalFixtures-user-entered-SpecInfo').value;
     var electricalFixturesUserEnteredClientInfo = document.getElementById('electricalFixtures-user-entered-ClientInfo').value;
 
     var electricalFixturesValue = calculateAmountFromPercentage(totalCost, electricalFixturesUserEnteredPercentage);
 
 
-    document.getElementById('electricalFixtures-Value').innerHTML = electricalFixturesValue;
+    document.getElementById('electricalFixtures-Value').innerHTML = electricalFixturesValue.toFixed(2);
     document.getElementById('electricalFixtures-spec-info-value').innerHTML = electricalFixturesUserEnteredSpecInfo;
     document.getElementById('electricalFixtures-client-info-value').innerHTML = electricalFixturesUserEnteredClientInfo;
 
@@ -1463,14 +1463,14 @@ function submitData() {
 
     ///////////////Finish HVAC ////////////////////
 
-    var finishHVACUserEnteredPercentage = document.getElementById('finishHVAC-user-entered-Percentage').value;
+    var finishHVACUserEnteredPercentage = Number(document.getElementById('finishHVAC-user-entered-Percentage').value);
     var finishHVACUserEnteredSpecInfo = document.getElementById('finishHVAC-user-entered-SpecInfo').value;
     var finishHVACUserEnteredClientInfo = document.getElementById('finishHVAC-user-entered-ClientInfo').value;
 
     var finishHVACValue = calculateAmountFromPercentage(totalCost, finishHVACUserEnteredPercentage);
 
 
-    document.getElementById('finishHVAC-Value').innerHTML = finishHVACValue;
+    document.getElementById('finishHVAC-Value').innerHTML = finishHVACValue.toFixed(2);
     document.getElementById('finishHVAC-spec-info-value').innerHTML = finishHVACUserEnteredSpecInfo;
     document.getElementById('finishHVAC-client-info-value').innerHTML = finishHVACUserEnteredClientInfo;
 
@@ -1497,14 +1497,14 @@ function submitData() {
 
     ///////////////Interior Paint ////////////////////
 
-    var interiorPaintUserEnteredPercentage = document.getElementById('interiorPaint-user-entered-Percentage').value;
+    var interiorPaintUserEnteredPercentage = Number(document.getElementById('interiorPaint-user-entered-Percentage').value);
     var interiorPaintUserEnteredSpecInfo = document.getElementById('interiorPaint-user-entered-SpecInfo').value;
     var interiorPaintUserEnteredClientInfo = document.getElementById('interiorPaint-user-entered-ClientInfo').value;
 
     var interiorPaintValue = calculateAmountFromPercentage(totalCost, interiorPaintUserEnteredPercentage);
 
 
-    document.getElementById('interiorPaint-Value').innerHTML = interiorPaintValue;
+    document.getElementById('interiorPaint-Value').innerHTML = interiorPaintValue.toFixed(2);
     document.getElementById('interiorPaint-spec-info-value').innerHTML = interiorPaintUserEnteredSpecInfo;
     document.getElementById('interiorPaint-client-info-value').innerHTML = interiorPaintUserEnteredClientInfo;
 
@@ -1516,14 +1516,14 @@ function submitData() {
 
     ///////////////Interior Paint Color(s) ////////////////////
 
-    var interiorPaintColorUserEnteredPercentage = document.getElementById('interiorPaintColor-user-entered-Percentage').value;
+    var interiorPaintColorUserEnteredPercentage = Number(document.getElementById('interiorPaintColor-user-entered-Percentage').value);
     var interiorPaintColorUserEnteredSpecInfo = document.getElementById('interiorPaintColor-user-entered-SpecInfo').value;
     var interiorPaintColorUserEnteredClientInfo = document.getElementById('interiorPaintColor-user-entered-ClientInfo').value;
 
     var interiorPaintColorValue = calculateAmountFromPercentage(totalCost, interiorPaintColorUserEnteredPercentage);
 
 
-    document.getElementById('interiorPaintColor-Value').innerHTML = interiorPaintColorValue;
+    document.getElementById('interiorPaintColor-Value').innerHTML = interiorPaintColorValue.toFixed(2);
     document.getElementById('interiorPaintColor-spec-info-value').innerHTML = interiorPaintColorUserEnteredSpecInfo;
     document.getElementById('interiorPaintColor-client-info-value').innerHTML = interiorPaintColorUserEnteredClientInfo;
 
@@ -1535,14 +1535,14 @@ function submitData() {
 
     ///////////////Interior Paint Covering(s) ////////////////////
 
-    var interiorPaintCoveringUserEnteredPercentage = document.getElementById('interiorPaintCovering-user-entered-Percentage').value;
+    var interiorPaintCoveringUserEnteredPercentage = Number(document.getElementById('interiorPaintCovering-user-entered-Percentage').value);
     var interiorPaintCoveringUserEnteredSpecInfo = document.getElementById('interiorPaintCovering-user-entered-SpecInfo').value;
     var interiorPaintCoveringUserEnteredClientInfo = document.getElementById('interiorPaintCovering-user-entered-ClientInfo').value;
 
     var interiorPaintCoveringValue = calculateAmountFromPercentage(totalCost, interiorPaintCoveringUserEnteredPercentage);
 
 
-    document.getElementById('interiorPaintCovering-Value').innerHTML = interiorPaintCoveringValue;
+    document.getElementById('interiorPaintCovering-Value').innerHTML = interiorPaintCoveringValue.toFixed(2);
     document.getElementById('interiorPaintCovering-spec-info-value').innerHTML = interiorPaintCoveringUserEnteredSpecInfo;
     document.getElementById('interiorPaintCovering-client-info-value').innerHTML = interiorPaintCoveringUserEnteredClientInfo;
 
@@ -1570,14 +1570,14 @@ function submitData() {
 
     ///////////////Completion ////////////////////
 
-    var completionUserEnteredPercentage = document.getElementById('completion-user-entered-Percentage').value;
+    var completionUserEnteredPercentage = Number(document.getElementById('completion-user-entered-Percentage').value);
     var completionUserEnteredSpecInfo = document.getElementById('completion-user-entered-SpecInfo').value;
     var completionUserEnteredClientInfo = document.getElementById('completion-user-entered-ClientInfo').value;
 
     var completionValue = calculateAmountFromPercentage(totalCost, completionUserEnteredPercentage);
 
 
-    document.getElementById('completion-Value').innerHTML = completionValue;
+    document.getElementById('completion-Value').innerHTML = completionValue.toFixed(2);
     document.getElementById('completion-spec-info-value').innerHTML = completionUserEnteredSpecInfo;
     document.getElementById('completion-client-info-value').innerHTML = completionUserEnteredClientInfo;
 
@@ -1605,14 +1605,14 @@ function submitData() {
 
     ///////////////Landscaping Specifications ////////////////////
 
-    var landscapingSpecificationsUserEnteredPercentage = document.getElementById('landscapingSpecifications-user-entered-Percentage').value;
+    var landscapingSpecificationsUserEnteredPercentage = Number(document.getElementById('landscapingSpecifications-user-entered-Percentage').value);
     var landscapingSpecificationsUserEnteredSpecInfo = document.getElementById('landscapingSpecifications-user-entered-SpecInfo').value;
     var landscapingSpecificationsUserEnteredClientInfo = document.getElementById('landscapingSpecifications-user-entered-ClientInfo').value;
 
     var landscapingSpecificationsValue = calculateAmountFromPercentage(totalCost, landscapingSpecificationsUserEnteredPercentage);
 
 
-    document.getElementById('landscapingSpecifications-Value').innerHTML = landscapingSpecificationsValue;
+    document.getElementById('landscapingSpecifications-Value').innerHTML = landscapingSpecificationsValue.toFixed(2);
     document.getElementById('landscapingSpecifications-spec-info-value').innerHTML = landscapingSpecificationsUserEnteredSpecInfo;
     document.getElementById('landscapingSpecifications-client-info-value').innerHTML = landscapingSpecificationsUserEnteredClientInfo;
 
@@ -1626,14 +1626,14 @@ function submitData() {
 
     ///////////////Landscaping ////////////////////
 
-    var landscapingUserEnteredPercentage = document.getElementById('landscaping-user-entered-Percentage').value;
+    var landscapingUserEnteredPercentage = Number(document.getElementById('landscaping-user-entered-Percentage').value);
     var landscapingUserEnteredSpecInfo = document.getElementById('landscaping-user-entered-SpecInfo').value;
     var landscapingUserEnteredClientInfo = document.getElementById('landscaping-user-entered-ClientInfo').value;
 
     var landscapingValue = calculateAmountFromPercentage(totalCost, landscapingUserEnteredPercentage);
 
 
-    document.getElementById('landscaping-Value').innerHTML = landscapingValue;
+    document.getElementById('landscaping-Value').innerHTML = landscapingValue.toFixed(2);
     document.getElementById('landscaping-spec-info-value').innerHTML = landscapingUserEnteredSpecInfo;
     document.getElementById('landscaping-client-info-value').innerHTML = landscapingUserEnteredClientInfo;
 
@@ -1660,14 +1660,14 @@ function submitData() {
 
     ///////////////Driveway////////////////////
 
-    var drivewayUserEnteredPercentage = document.getElementById('driveway-user-entered-Percentage').value;
+    var drivewayUserEnteredPercentage = Number(document.getElementById('driveway-user-entered-Percentage').value);
     var drivewayUserEnteredSpecInfo = document.getElementById('driveway-user-entered-SpecInfo').value;
     var drivewayUserEnteredClientInfo = document.getElementById('driveway-user-entered-ClientInfo').value;
 
     var drivewayValue = calculateAmountFromPercentage(totalCost, drivewayUserEnteredPercentage);
 
 
-    document.getElementById('driveway-Value').innerHTML = drivewayValue;
+    document.getElementById('driveway-Value').innerHTML = drivewayValue.toFixed(2);
     document.getElementById('driveway-spec-info-value').innerHTML = drivewayUserEnteredSpecInfo;
     document.getElementById('driveway-client-info-value').innerHTML = drivewayUserEnteredClientInfo;
 
@@ -1693,14 +1693,14 @@ function submitData() {
 
     ///////////////Patio////////////////////
 
-    var patioUserEnteredPercentage = document.getElementById('patio-user-entered-Percentage').value;
+    var patioUserEnteredPercentage = Number(document.getElementById('patio-user-entered-Percentage').value);
     var patioUserEnteredSpecInfo = document.getElementById('patio-user-entered-SpecInfo').value;
     var patioUserEnteredClientInfo = document.getElementById('patio-user-entered-ClientInfo').value;
 
     var patioValue = calculateAmountFromPercentage(totalCost, patioUserEnteredPercentage);
 
 
-    document.getElementById('patio-Value').innerHTML = patioValue;
+    document.getElementById('patio-Value').innerHTML = patioValue.toFixed(2);
     document.getElementById('patio-spec-info-value').innerHTML = patioUserEnteredSpecInfo;
     document.getElementById('patio-client-info-value').innerHTML = patioUserEnteredClientInfo;
 
@@ -1712,14 +1712,14 @@ function submitData() {
 
     ///////////////Side Walks////////////////////
 
-    var sideWalksUserEnteredPercentage = document.getElementById('sideWalks-user-entered-Percentage').value;
+    var sideWalksUserEnteredPercentage = Number(document.getElementById('sideWalks-user-entered-Percentage').value);
     var sideWalksUserEnteredSpecInfo = document.getElementById('sideWalks-user-entered-SpecInfo').value;
     var sideWalksUserEnteredClientInfo = document.getElementById('sideWalks-user-entered-ClientInfo').value;
 
     var sideWalksValue = calculateAmountFromPercentage(totalCost, sideWalksUserEnteredPercentage);
 
 
-    document.getElementById('sideWalks-Value').innerHTML = sideWalksValue;
+    document.getElementById('sideWalks-Value').innerHTML = sideWalksValue.toFixed(2);
     document.getElementById('sideWalks-spec-info-value').innerHTML = sideWalksUserEnteredSpecInfo;
     document.getElementById('sideWalks-client-info-value').innerHTML = sideWalksUserEnteredClientInfo;
 
@@ -1731,14 +1731,14 @@ function submitData() {
 
     ///////////////Fences////////////////////
 
-    var fencesUserEnteredPercentage = document.getElementById('fences-user-entered-Percentage').value;
+    var fencesUserEnteredPercentage = Number(document.getElementById('fences-user-entered-Percentage').value) ;
     var fencesUserEnteredSpecInfo = document.getElementById('fences-user-entered-SpecInfo').value;
     var fencesUserEnteredClientInfo = document.getElementById('fences-user-entered-ClientInfo').value;
 
     var fencesValue = calculateAmountFromPercentage(totalCost, fencesUserEnteredPercentage);
 
 
-    document.getElementById('fences-Value').innerHTML = fencesValue;
+    document.getElementById('fences-Value').innerHTML = fencesValue.toFixed(2);
     document.getElementById('fences-spec-info-value').innerHTML = fencesUserEnteredSpecInfo;
     document.getElementById('fences-client-info-value').innerHTML = fencesUserEnteredClientInfo;
 
@@ -1751,14 +1751,14 @@ function submitData() {
 
     ///////////////Pads////////////////////
 
-    var padsUserEnteredPercentage = document.getElementById('pads-user-entered-Percentage').value;
+    var padsUserEnteredPercentage = Number(document.getElementById('pads-user-entered-Percentage').value) ;
     var padsUserEnteredSpecInfo = document.getElementById('pads-user-entered-SpecInfo').value;
     var padsUserEnteredClientInfo = document.getElementById('pads-user-entered-ClientInfo').value;
 
     var padsValue = calculateAmountFromPercentage(totalCost, padsUserEnteredPercentage);
 
 
-    document.getElementById('pads-Value').innerHTML = padsValue;
+    document.getElementById('pads-Value').innerHTML = padsValue.toFixed(2);
     document.getElementById('pads-spec-info-value').innerHTML = padsUserEnteredSpecInfo;
     document.getElementById('pads-client-info-value').innerHTML = padsUserEnteredClientInfo;
 
@@ -1784,14 +1784,16 @@ function submitData() {
 
     ///////////////////////////////////
 
-    var finalWalkThroughUserEnteredPercentage = document.getElementById('finalWalkThrough-user-entered-Percentage').value;
+    var finalWalkThroughUserEnteredPercentage = Number(document.getElementById('finalWalkThrough-user-entered-Percentage').value);
     var finalWalkThroughUserEnteredSpecInfo = document.getElementById('finalWalkThrough-user-entered-SpecInfo').value;
     var finalWalkThroughUserEnteredClientInfo = document.getElementById('finalWalkThrough-user-entered-ClientInfo').value;
 
     var finalWalkThroughValue = calculateAmountFromPercentage(totalCost, finalWalkThroughUserEnteredPercentage);
 
-
-    document.getElementById('finalWalkThrough-Value').innerHTML = finalWalkThroughValue;
+/*console.log("finalWalkThroughUserEnteredPercentage"+finalWalkThroughUserEnteredPercentage+" "+typeof(finalWalkThroughUserEnteredPercentage)+" "+finalWalkThroughValue+" "+typeof(finalWalkThroughValue));*/
+    
+    
+    document.getElementById('finalWalkThrough-Value').innerHTML = finalWalkThroughValue.toFixed(2);
     document.getElementById('finalWalkThrough-spec-info-value').innerHTML = finalWalkThroughUserEnteredSpecInfo;
     document.getElementById('finalWalkThrough-client-info-value').innerHTML = finalWalkThroughUserEnteredClientInfo;
 
@@ -1806,14 +1808,15 @@ function submitData() {
 
 
 
-    var totaluserenteredpercentage = permitsAndFeesPercentage + architecturalEngineeringUserEnteredPercentage + siteworkUserEnteredPercentage + demolitionUserEnteredPercentage + utilityConnectionUserEnteredPercentage + excavationUserEnteredPercentage + footingAndFoundationUserEnteredPercentage + waterProofingUserEnteredPercentage + termiteProtectionUserEnteredPercentage + steelUserEnteredPercentage + framingUserEnteredPercentage + concreteUserEnteredPercentage + sheetMetalUserEnteredPercentage + roughPlumbingUserEnteredPercentage + roughElectricalUserEnteredPercentage + roughHvacUserEnteredPercentage + roofingSpecificationsUserEnteredPercentage + roofingMaterialUserEnteredPercentage + masnorySpecificationsUserEnteredPercentage + chimneyMaterialUserEnteredPercentage + fireplaceUserEnteredPercentage + brickVeneerUserEnteredPercentage + masonryWallMaterialUserEnteredPercentage + masonryFlooringMaterialUserEnteredPercentage + windowsUserEnteredPercentage + skylightsUserEnteredPercentage + stromWindowsAndDoorsUserEnteredPercentage + frontDoorUserEnteredPercentage + otherExteriorDoorsUserEnteredPercentage + interiorDoorsUserEnteredPercentage + slidingGlassDoorsUserEnteredPercentage + garageDoorUserEnteredPercentage + windowAndDoorHardwareUserEnteredPercentage + insulationUserEnteredPercentage + exteriorTrimUserEnteredPercentage + exteriorPaintingUserEnteredPercentage + exteriorPaintUserEnteredPercentage + drywallUserEnteredPercentage + flooringSpecificationsUserEnteredPercentage + resilientFlooringUserEnteredPercentage + carpetingUserEnteredPercentage + hardwoodFlooringUserEnteredPercentage + interiorUserEnteredPercentage + ceramicTileSpecificationsUserEnteredPercentage + ceramicTileUserEnteredPercentage + cabinetSpecificationsUserEnteredPercentage + kitchenCabinetsUserEnteredPercentage + counterTopsUserEnteredPercentage + bathroomCabinetsUserEnteredPercentage + cabinetHardwareUserEnteredPercentage + applianceSpecificationsUserEnteredPercentage + rangeUserEnteredPercentage + rangeHoodUserEnteredPercentage + disposalUserEnteredPercentage + dishwasherUserEnteredPercentage + refrigeratorUserEnteredPercentage + washerAndDryerUserEnteredPercentage + microwaveUserEnteredPercentage + vacuumUserEnteredPercentage + appliancesUserEnteredPercentage + finishPlumbingSpecificationsUserEnteredPercentage + plumbingFixturesUserEnteredPercentage + finishElectricalSpecificationsUserEnteredPercentage + electricalFixturesUserEnteredPercentage + finishHVACUserEnteredPercentage + interiorPaintUserEnteredPercentage + interiorPaintColorUserEnteredPercentage + interiorPaintCoveringUserEnteredPercentage + completionUserEnteredPercentage + landscapingSpecificationsUserEnteredPercentage + landscapingUserEnteredPercentage + drivewayUserEnteredPercentage + patioUserEnteredPercentage + sideWalksUserEnteredPercentage + +fencesUserEnteredPercentage + padsUserEnteredPercentage + finalWalkThroughUserEnteredPercentage;
+    var totaluserenteredpercentage = (permitsAndFeesPercentage + architecturalEngineeringUserEnteredPercentage + siteworkUserEnteredPercentage + demolitionUserEnteredPercentage + utilityConnectionUserEnteredPercentage + excavationUserEnteredPercentage + footingAndFoundationUserEnteredPercentage + waterProofingUserEnteredPercentage + termiteProtectionUserEnteredPercentage + steelUserEnteredPercentage + framingUserEnteredPercentage + concreteUserEnteredPercentage + sheetMetalUserEnteredPercentage + roughPlumbingUserEnteredPercentage + roughElectricalUserEnteredPercentage + roughHvacUserEnteredPercentage + roofingSpecificationsUserEnteredPercentage + roofingMaterialUserEnteredPercentage + masnorySpecificationsUserEnteredPercentage + chimneyMaterialUserEnteredPercentage + fireplaceUserEnteredPercentage + brickVeneerUserEnteredPercentage + masonryWallMaterialUserEnteredPercentage + masonryFlooringMaterialUserEnteredPercentage + windowsUserEnteredPercentage + skylightsUserEnteredPercentage + stromWindowsAndDoorsUserEnteredPercentage + frontDoorUserEnteredPercentage + otherExteriorDoorsUserEnteredPercentage + interiorDoorsUserEnteredPercentage + slidingGlassDoorsUserEnteredPercentage + garageDoorUserEnteredPercentage + windowAndDoorHardwareUserEnteredPercentage + insulationUserEnteredPercentage + exteriorTrimUserEnteredPercentage + exteriorPaintingUserEnteredPercentage + exteriorPaintUserEnteredPercentage + drywallUserEnteredPercentage + flooringSpecificationsUserEnteredPercentage + resilientFlooringUserEnteredPercentage + carpetingUserEnteredPercentage + hardwoodFlooringUserEnteredPercentage + interiorUserEnteredPercentage + ceramicTileSpecificationsUserEnteredPercentage + ceramicTileUserEnteredPercentage + cabinetSpecificationsUserEnteredPercentage + kitchenCabinetsUserEnteredPercentage + counterTopsUserEnteredPercentage + bathroomCabinetsUserEnteredPercentage + cabinetHardwareUserEnteredPercentage + applianceSpecificationsUserEnteredPercentage + rangeUserEnteredPercentage + rangeHoodUserEnteredPercentage + disposalUserEnteredPercentage + dishwasherUserEnteredPercentage + refrigeratorUserEnteredPercentage + washerAndDryerUserEnteredPercentage + microwaveUserEnteredPercentage + vacuumUserEnteredPercentage + appliancesUserEnteredPercentage + finishPlumbingSpecificationsUserEnteredPercentage + plumbingFixturesUserEnteredPercentage + finishElectricalSpecificationsUserEnteredPercentage + electricalFixturesUserEnteredPercentage + finishHVACUserEnteredPercentage + interiorPaintUserEnteredPercentage + interiorPaintColorUserEnteredPercentage + interiorPaintCoveringUserEnteredPercentage + completionUserEnteredPercentage + landscapingSpecificationsUserEnteredPercentage + landscapingUserEnteredPercentage + drivewayUserEnteredPercentage + patioUserEnteredPercentage + sideWalksUserEnteredPercentage + fencesUserEnteredPercentage+padsUserEnteredPercentage+finalWalkThroughUserEnteredPercentage).toFixed(2);
+    /*console.log("user entered percentage"+typeof(permitsAndFeesValue));*/
 
 
-    var totalValue = permitsAndFeesValue + architecturalEngineeringValue + siteWorkValue + demolitionValue + utilityValue + excavationValue + footingAndFoundationValue + waterProofingValue + termiteProtectionValue + steelValue + framingValue + concreteValue + sheetMetalValue + roughPlumbingValue + roughElectricalValue + roughHvacValue + roofingSpecificationsValue + roofingMaterialValue + masnorySpecificationsValue + chimneyMaterialValue + fireplaceValue + brickVeneerValue + masonryWallMaterialValue + masonryFlooringMaterialValue + windowsValue + skylightsValue + stromWindowsAndDoorsValue + frontDoorValue + otherExteriorDoorsValue + interiorDoorsValue + slidingGlassDoorsValue + garageDoorValue + windowAndDoorHardwareValue + insulationValue + exteriorTrimValue + exteriorPaintingValue + exteriorPaintValue + drywallValue + flooringSpecificationsValue + resilientFlooringValue + carpetingValue + hardwoodFlooringValue + interiorValue + ceramicTileSpecificationsValue + ceramicTileValue + cabinetSpecificationsValue + kitchenCabinetsValue + counterTopsValue + bathroomCabinetsValue + cabinetHardwareValue + applianceSpecificationsValue + rangeValue + rangeHoodValue + disposalValue + dishwasherValue + refrigeratorValue + washerAndDryerValue + microwaveValue + vacuumValue + appliancesValue + finishPlumbingSpecificationsValue + plumbingFixturesValue + finishElectricalSpecificationsValue + electricalFixturesValue + finishHVACValue + interiorPaintValue + interiorPaintColorValue + interiorPaintCoveringValue + completionValue + landscapingSpecificationsValue + landscapingValue + drivewayValue + patioValue + sideWalksValue + fencesValue + padsValue + finalWalkThroughValue;
+    var totalValue = (permitsAndFeesValue + architecturalEngineeringValue + siteWorkValue + demolitionValue + utilityValue + excavationValue + footingAndFoundationValue + waterProofingValue + termiteProtectionValue + steelValue + framingValue + concreteValue + sheetMetalValue + roughPlumbingValue + roughElectricalValue + roughHvacValue + roofingSpecificationsValue + roofingMaterialValue + masnorySpecificationsValue + chimneyMaterialValue + fireplaceValue + brickVeneerValue + masonryWallMaterialValue + masonryFlooringMaterialValue + windowsValue + skylightsValue + stromWindowsAndDoorsValue + frontDoorValue + otherExteriorDoorsValue + interiorDoorsValue + slidingGlassDoorsValue + garageDoorValue + windowAndDoorHardwareValue + insulationValue + exteriorTrimValue + exteriorPaintingValue + exteriorPaintValue + drywallValue + flooringSpecificationsValue + resilientFlooringValue + carpetingValue + hardwoodFlooringValue + interiorValue + ceramicTileSpecificationsValue + ceramicTileValue + cabinetSpecificationsValue + kitchenCabinetsValue + counterTopsValue + bathroomCabinetsValue + cabinetHardwareValue + applianceSpecificationsValue + rangeValue + rangeHoodValue + disposalValue + dishwasherValue + refrigeratorValue + washerAndDryerValue + microwaveValue + vacuumValue + appliancesValue + finishPlumbingSpecificationsValue + plumbingFixturesValue + finishElectricalSpecificationsValue + electricalFixturesValue + finishHVACValue + interiorPaintValue + interiorPaintColorValue + interiorPaintCoveringValue + completionValue + landscapingSpecificationsValue + landscapingValue + drivewayValue + patioValue + sideWalksValue + fencesValue + padsValue + finalWalkThroughValue).toFixed(2);
     document.getElementById('total').innerHTML = totalValue;
 
-    if (totaluserenteredpercentage != 100) {
-        if (confirm("Total not equal to $" + totalCost + " . Would you like to continue?")) {
+    if (totaluserenteredpercentage) {
+        if (confirm("Initial Budget = $" + totalCost.toFixed(2) + " and Total percentage = "+totaluserenteredpercentage+ "% and Final Cost = $"+totalValue+" . Click OK to continue.")) {
 
         } else {
             return false;
