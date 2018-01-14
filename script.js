@@ -1836,7 +1836,8 @@ function submitData() {
 }
 
 function docuPrint() {
-    document.title = document.getElementById('outputAddressID').value;
+    document.title = document.getElementById('userEnteredWorkAddressId').value;
+    //console.log(document.getElementById('userEnteredWorkAddressId').value);
     window.print();
 }
 function backToEdit(){
