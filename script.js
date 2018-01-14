@@ -1815,10 +1815,16 @@ function submitData() {
     var totalValue = (permitsAndFeesValue + architecturalEngineeringValue + siteWorkValue + demolitionValue + utilityValue + excavationValue + footingAndFoundationValue + waterProofingValue + termiteProtectionValue + steelValue + framingValue + concreteValue + sheetMetalValue + roughPlumbingValue + roughElectricalValue + roughHvacValue + roofingSpecificationsValue + roofingMaterialValue + masnorySpecificationsValue + chimneyMaterialValue + fireplaceValue + brickVeneerValue + masonryWallMaterialValue + masonryFlooringMaterialValue + windowsValue + skylightsValue + stromWindowsAndDoorsValue + frontDoorValue + otherExteriorDoorsValue + interiorDoorsValue + slidingGlassDoorsValue + garageDoorValue + windowAndDoorHardwareValue + insulationValue + exteriorTrimValue + exteriorPaintingValue + exteriorPaintValue + drywallValue + flooringSpecificationsValue + resilientFlooringValue + carpetingValue + hardwoodFlooringValue + interiorValue + ceramicTileSpecificationsValue + ceramicTileValue + cabinetSpecificationsValue + kitchenCabinetsValue + counterTopsValue + bathroomCabinetsValue + cabinetHardwareValue + applianceSpecificationsValue + rangeValue + rangeHoodValue + disposalValue + dishwasherValue + refrigeratorValue + washerAndDryerValue + microwaveValue + vacuumValue + appliancesValue + finishPlumbingSpecificationsValue + plumbingFixturesValue + finishElectricalSpecificationsValue + electricalFixturesValue + finishHVACValue + interiorPaintValue + interiorPaintColorValue + interiorPaintCoveringValue + completionValue + landscapingSpecificationsValue + landscapingValue + drivewayValue + patioValue + sideWalksValue + fencesValue + padsValue + finalWalkThroughValue).toFixed(2);
     document.getElementById('total').innerHTML = totalValue;
 
-    if (totaluserenteredpercentage) {
+    if (totaluserenteredpercentage <= 100) {
         if (confirm("Initial Budget = $" + totalCost.toFixed(2) + " and Total percentage = "+totaluserenteredpercentage+ "% and Final Cost = $"+totalValue+" . Click OK to continue.")) {
 
         } else {
+            return false;
+        }
+    }else if(totaluserenteredpercentage > 100){
+        if(confirm("Total percentage is "+totaluserenteredpercentage+"% which is more than 100%. Click cancel and change the values.")){
+            return false;
+        }else{
             return false;
         }
     }
@@ -1829,7 +1835,6 @@ function submitData() {
         document.getElementById('div2').style.display = 'block';
 
     }
-
 
 
 
